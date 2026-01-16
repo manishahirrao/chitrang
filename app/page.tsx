@@ -1,10 +1,76 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import HeroSection from '@/components/home/HeroSection';
 import FeaturesSection from '@/components/home/FeaturesSection';
-import Link from 'next/link';
-import Button from '@/components/ui/Button';
+import ProductCard from '@/components/ProductCard';
+import QuoteModal from '@/components/QuoteModal';
+import { products } from '@/data/products';
 import { BUSINESS_INFO } from '@/lib/constants';
+import Button from '@/components/ui/Button';
 
 export default function Home() {
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+  const [showQuoteModal, setShowQuoteModal] = useState(false);
+
+  const testimonials = [
+    {
+      name: "Rajesh Kumar",
+      position: "Operations Manager, Textile Industry",
+      content: "The water softener system has transformed our operations. Water quality has improved significantly, and we've seen a 40% reduction in maintenance costs.",
+      rating: 5,
+      initial: "R"
+    },
+    {
+      name: "Priya Sharma",
+      position: "CEO, Healthcare Facility",
+      content: "Exceptional service and quality products. The RO system installation was smooth, and the water quality meets all our medical standards. Highly recommended!",
+      rating: 5,
+      initial: "P"
+    },
+    {
+      name: "Amit Verma",
+      position: "Plant Manager, Manufacturing Unit",
+      content: "Chitransh Agency has been our trusted partner for 15+ years. Their prompt service and reliable products keep our operations running smoothly.",
+      rating: 5,
+      initial: "A"
+    },
+    {
+      name: "Sneha Patel",
+      position: "Director, Educational Institute",
+      content: "The vacuum cleaners and water purifiers have made a huge difference in our facility. Students and staff both appreciate the clean environment.",
+      rating: 5,
+      initial: "S"
+    },
+    {
+      name: "Vikram Singh",
+      position: "Owner, Restaurant Chain",
+      content: "Perfect water quality is crucial for our business. Chitransh Agency delivered exactly what we needed with excellent after-sales support.",
+      rating: 5,
+      initial: "V"
+    }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 4000); // Change every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
+
+  // Show quote modal after 5 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowQuoteModal(true);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="min-h-screen bg-sky-50">
       <HeroSection />
@@ -23,45 +89,63 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {/* RO Water Purifiers Card */}
-            <div className="bg-gradient-to-br from-sky-50 to-sky-100 rounded-2xl p-8 border border-sky-200 hover:shadow-lg transition-shadow">
-              <div className="w-14 h-14 bg-sky-600 rounded-xl flex items-center justify-center mb-4">
-                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                </svg>
+            <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-sky-100">
+              <div className="relative h-48">
+                <Image
+                  src="/images/products/kent-ace-ro-water-purifier.webp"
+                  alt="RO Water Purifiers"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
               </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">RO Water Purifiers</h3>
-              <p className="text-slate-600 leading-relaxed mb-4">Advanced reverse osmosis systems for pure, safe drinking water with essential minerals</p>
-              <Link href="/products">
-                <span className="text-sky-600 font-medium hover:text-sky-700 transition-colors">Explore RO Systems →</span>
-              </Link>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">RO Water Purifiers</h3>
+                <p className="text-slate-600 leading-relaxed mb-4">Advanced reverse osmosis systems for pure, safe drinking water with essential minerals</p>
+                <Link href="/products">
+                  <span className="text-sky-600 font-medium hover:text-sky-700 transition-colors">Explore RO Systems →</span>
+                </Link>
+              </div>
             </div>
 
             {/* Vacuum Cleaners Card */}
-            <div className="bg-gradient-to-br from-sky-50 to-sky-100 rounded-2xl p-8 border border-sky-200 hover:shadow-lg transition-shadow">
-              <div className="w-14 h-14 bg-sky-600 rounded-xl flex items-center justify-center mb-4">
-                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                </svg>
+            <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-sky-100">
+              <div className="relative h-48">
+                <Image
+                  src="/images/products/kent-cyclonic-vacuum-cleaner.webp"
+                  alt="Vacuum Cleaners"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
               </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">Vacuum Cleaners</h3>
-              <p className="text-slate-600 leading-relaxed mb-4">Powerful cleaning solutions for both residential and commercial spaces</p>
-              <Link href="/products">
-                <span className="text-sky-600 font-medium hover:text-sky-700 transition-colors">Explore Cleaners →</span>
-              </Link>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">Vacuum Cleaners</h3>
+                <p className="text-slate-600 leading-relaxed mb-4">Powerful cleaning solutions for both residential and commercial spaces</p>
+                <Link href="/products">
+                  <span className="text-sky-600 font-medium hover:text-sky-700 transition-colors">Explore Cleaners →</span>
+                </Link>
+              </div>
             </div>
 
             {/* Water Softeners Card */}
-            <div className="bg-gradient-to-br from-sky-50 to-sky-100 rounded-2xl p-8 border border-sky-200 hover:shadow-lg transition-shadow">
-              <div className="w-14 h-14 bg-sky-600 rounded-xl flex items-center justify-center mb-4">
-                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                </svg>
+            <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-sky-100">
+              <div className="relative h-48">
+                <Image
+                  src="/images/products/kent-automatic-water-softener.webp"
+                  alt="Water Softeners"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
               </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">Water Softeners</h3>
-              <p className="text-slate-600 leading-relaxed mb-4">Eliminate hard water problems with our advanced water softening systems</p>
-              <Link href="/products">
-                <span className="text-sky-600 font-medium hover:text-sky-700 transition-colors">Explore Softeners →</span>
-              </Link>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">Water Softeners</h3>
+                <p className="text-slate-600 leading-relaxed mb-4">Eliminate hard water problems with our advanced water softening systems</p>
+                <Link href="/products">
+                  <span className="text-sky-600 font-medium hover:text-sky-700 transition-colors">Explore Softeners →</span>
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -87,130 +171,152 @@ export default function Home() {
           </div>
 
           <div className="relative max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-sky-50 to-white rounded-2xl p-8 border border-sky-100 shadow-lg">
+            {/* Main Testimonial Card */}
+            <div className="bg-gradient-to-br from-sky-50 to-white rounded-2xl p-8 border border-sky-100 shadow-lg transition-all duration-500">
               <div className="flex mb-6">
-                {[...Array(5)].map((_, i) => (
+                {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
                   <svg key={i} className="w-6 h-6 text-yellow-400 fill-current" viewBox="0 0 20 20">
                     <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
                   </svg>
                 ))}
               </div>
               <p className="text-slate-700 mb-6 leading-relaxed text-lg italic">
-                "The water softener system has transformed our operations. Water quality has improved significantly, and we've seen a 40% reduction in maintenance costs."
+                "{testimonials[currentTestimonial].content}"
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-16 h-16 bg-sky-200 rounded-full flex items-center justify-center">
-                  <span className="text-sky-700 font-bold text-xl">R</span>
+                  <span className="text-sky-700 font-bold text-xl">{testimonials[currentTestimonial].initial}</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-slate-900 text-lg">Rajesh Kumar</h4>
-                  <p className="text-sm text-slate-600">Operations Manager, Textile Industry</p>
+                  <h4 className="font-semibold text-slate-900 text-lg">{testimonials[currentTestimonial].name}</h4>
+                  <p className="text-sm text-slate-600">{testimonials[currentTestimonial].position}</p>
                 </div>
               </div>
             </div>
+
+            {/* Testimonial Indicators */}
+            <div className="flex justify-center gap-2 mt-6">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentTestimonial(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentTestimonial
+                      ? 'bg-sky-600 scale-125'
+                      : 'bg-sky-300 hover:bg-sky-400'
+                  }`}
+                />
+              ))}
+            </div>
+
+            {/* Navigation Buttons */}
+            <button
+              onClick={() => setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 border border-sky-200 hover:border-sky-300"
+            >
+              <svg className="w-5 h-5 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={() => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 border border-sky-200 hover:border-sky-300"
+            >
+              <svg className="w-5 h-5 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
         </div>
       </section>
 
-      {/* Water Softener FAQ Section */}
+      {/* FAQ Section */}
       <section className="py-16 bg-sky-50">
-        <div className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="text-xs uppercase tracking-[0.4em] text-sky-500 mb-3 font-light">Expert Answers</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Water Softener FAQs</h2>
-            <p className="text-base md:text-lg text-slate-600">
-              Get detailed answers about our water softener systems, installation, and maintenance.
+            <p className="text-xs uppercase tracking-[0.4em] text-sky-500 mb-3 font-light">Frequently Asked Questions</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Everything You Need to Know</h2>
+            <p className="text-base md:text-lg text-slate-600 max-w-3xl mx-auto">
+              Get answers about our products, services, installation, and support for water purification and cleaning solutions
             </p>
           </div>
-          <div className="space-y-3">
-            <div className="bg-white rounded-xl border border-sky-100 shadow-sm overflow-hidden">
-              <button
-                type="button"
-                className="w-full text-left px-4 py-3 flex items-center justify-between text-sm hover:bg-sky-50 transition-colors"
-              >
-                <span className="pr-4 text-slate-800 font-medium">What is the capacity range of your water softener systems?</span>
-                <span className="text-slate-500 text-xl font-light">+</span>
-              </button>
-              <div className="px-4 pb-4 text-sm text-slate-600 leading-relaxed border-t border-sky-100">
-                Our water softener systems range from 500 LPH to 50,000 LPH capacity, suitable for small commercial establishments to large industrial plants. We customize systems based on your specific water hardness levels and consumption requirements.
+          
+          <div className="space-y-4">
+            {[
+              {
+                question: "What types of water purifiers do you offer?",
+                answer: "We offer a comprehensive range of RO water purifiers including domestic systems (Kent, LG, Aqua Guard), commercial purifiers (100 LPH to 50,000 LPH), and industrial RO plants. All systems feature multi-stage purification with UV, UF, and mineral addition technology."
+              },
+              {
+                question: "Do you provide installation services in Bhopal?",
+                answer: `Yes! We provide professional installation services across Bhopal and surrounding areas. Our team handles complete setup including plumbing, electrical connections, and commissioning. Call us at ${BUSINESS_INFO.phones.business[0]} to schedule installation.`
+              },
+              {
+                question: "What is your service area and response time?",
+                answer: "We serve all of Bhopal with same-day installation for most products. Our service team covers nearby areas including Sehore, Raisen, and Vidisha. Emergency support is available 24/7 for existing customers with AMC contracts."
+              },
+              {
+                question: "What brands of vacuum cleaners do you offer?",
+                answer: "We stock premium vacuum cleaners from Eureka Forbes, Kent, and Dulevo. Our range includes wet & dry vacuums, cyclonic cleaners, upholstery vacuums, and heavy-duty industrial models. All products come with manufacturer warranty."
+              },
+              {
+                question: "Do you offer Annual Maintenance Contracts (AMC)?",
+                answer: "Yes, we provide comprehensive AMC packages for all products. Our AMC includes regular servicing, filter replacement, emergency support, and priority service. Starting from ₹3,000/year for domestic systems and customized plans for commercial setups."
+              },
+              {
+                question: "What payment methods do you accept?",
+                answer: "We accept cash, UPI, bank transfers, and all major credit/debit cards. For commercial orders, we also offer NET banking and corporate billing options. EMI facilities are available on select products above ₹10,000."
+              },
+              {
+                question: "How do I contact customer support?",
+                answer: `Reach us via phone at ${BUSINESS_INFO.phones.business[0]}, WhatsApp at ${BUSINESS_INFO.phones.support}, or email at ${BUSINESS_INFO.primaryEmail}. Our office is open Monday-Saturday, 9 AM - 7 PM. Emergency support is available 24/7 for AMC customers.`
+              },
+              {
+                question: "Do you have a physical showroom?",
+                answer: `Yes! Visit our showroom at ${BUSINESS_INFO.address.full} to see live product demonstrations. Our experts will help you choose the right solution. We're open Monday-Saturday, 10 AM - 7 PM.`
+              },
+              {
+                question: "What warranties do you provide?",
+                answer: "All products come with manufacturer warranty (1-3 years depending on model). We also provide service warranty on installation work. Extended warranty options are available for additional peace of mind."
+              },
+              {
+                question: "Can I get a free water test?",
+                answer: "Absolutely! We offer complimentary water testing to check TDS, hardness, and contamination levels. Our experts will visit your location, collect samples, and provide detailed analysis with product recommendations."
+              }
+            ].map((faq, index) => (
+              <div key={index} className="bg-white rounded-xl border border-sky-100 shadow-sm overflow-hidden">
+                <button
+                  type="button"
+                  onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
+                  className="w-full text-left px-6 py-4 flex items-center justify-between hover:bg-sky-50 transition-colors"
+                >
+                  <span className="pr-4 text-slate-800 font-medium text-base">{faq.question}</span>
+                  <span 
+                    className={`text-slate-500 text-xl font-light transition-transform duration-300 ${
+                      openFAQ === index ? 'rotate-45' : ''
+                    }`}
+                  >
+                    +
+                  </span>
+                </button>
+                <div 
+                  className={`overflow-hidden transition-all duration-300 ${
+                    openFAQ === index ? 'max-h-96' : 'max-h-0'
+                  }`}
+                >
+                  <div className="px-6 pb-4 text-slate-600 leading-relaxed border-t border-sky-100">
+                    {faq.answer}
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="bg-white rounded-xl border border-sky-100 shadow-sm overflow-hidden">
-              <button
-                type="button"
-                className="w-full text-left px-4 py-3 flex items-center justify-between text-sm hover:bg-sky-50 transition-colors"
-              >
-                <span className="pr-4 text-slate-800 font-medium">How often do water softeners need regeneration?</span>
-                <span className="text-slate-500 text-xl font-light">+</span>
-              </button>
-              <div className="px-4 pb-4 text-sm text-slate-600 leading-relaxed border-t border-sky-100">
-                Regeneration frequency depends on water hardness and usage. Typically, our systems regenerate automatically every 3-7 days for domestic use and 1-3 days for industrial applications. Our smart controllers optimize regeneration cycles based on actual water consumption.
-              </div>
-            </div>
-            <div className="bg-white rounded-xl border border-sky-100 shadow-sm overflow-hidden">
-              <button
-                type="button"
-                className="w-full text-left px-4 py-3 flex items-center justify-between text-sm hover:bg-sky-50 transition-colors"
-              >
-                <span className="pr-4 text-slate-800 font-medium">Can water softeners handle industrial-scale water treatment?</span>
-                <span className="text-slate-500 text-xl font-light">+</span>
-              </button>
-              <div className="px-4 pb-4 text-sm text-slate-600 leading-relaxed border-t border-sky-100">
-                Yes, our industrial water softeners are designed for high-capacity operations up to 50,000 LPH. They feature robust construction, automated controls, and can handle continuous operation in demanding industrial environments like manufacturing, textiles, and power plants.
-              </div>
-            </div>
-            <div className="bg-white rounded-xl border border-sky-100 shadow-sm overflow-hidden">
-              <button
-                type="button"
-                className="w-full text-left px-4 py-3 flex items-center justify-between text-sm hover:bg-sky-50 transition-colors"
-              >
-                <span className="pr-4 text-slate-800 font-medium">What maintenance is required for water softener systems?</span>
-                <span className="text-slate-500 text-xl font-light">+</span>
-              </button>
-              <div className="px-4 pb-4 text-sm text-slate-600 leading-relaxed border-t border-sky-100">
-                Regular maintenance includes salt refilling (monthly for domestic, weekly for industrial), resin cleaning quarterly, and annual servicing of valves and controls. Our AMC packages cover all maintenance needs with scheduled visits and emergency support.
-              </div>
-            </div>
-            <div className="bg-white rounded-xl border border-sky-100 shadow-sm overflow-hidden">
-              <button
-                type="button"
-                className="w-full text-left px-4 py-3 flex items-center justify-between text-sm hover:bg-sky-50 transition-colors"
-              >
-                <span className="pr-4 text-slate-800 font-medium">Do you provide installation and AMC services for water softeners?</span>
-                <span className="text-slate-500 text-xl font-light">+</span>
-              </button>
-              <div className="px-4 pb-4 text-sm text-slate-600 leading-relaxed border-t border-sky-100">
-                Yes, we provide complete end-to-end services including site survey, system design, installation, commissioning, and annual maintenance contracts. Our team ensures proper setup and offers 24/7 support for all installed systems across Madhya Pradesh.
-              </div>
-            </div>
+            ))}
           </div>
+
+        
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="bg-gradient-to-r from-sky-600 to-sky-700 text-white py-16">
-        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold mb-2">Trusted by Industry Leaders</h2>
-            <p className="text-sky-100">Delivering excellence in water treatment solutions across Bhopal</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 text-center">
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <p className="text-3xl md:text-4xl font-bold mb-2">500+</p>
-              <p className="text-sky-100 text-sm">Happy Clients</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <p className="text-3xl md:text-4xl font-bold mb-2">1.2k+</p>
-              <p className="text-sky-100 text-sm">Products Installed</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <p className="text-3xl md:text-4xl font-bold mb-2">200+</p>
-              <p className="text-sky-100 text-sm">AMC Customers</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      
       {/* Contact CTA Section */}
       <section className="bg-gradient-to-br from-sky-50 to-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
@@ -227,21 +333,33 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href={`tel:${BUSINESS_INFO.phones.business[0]}`}>
-                  <Button variant="secondary" className="bg-white text-sky-700 hover:bg-sky-50 px-8 py-4 rounded-xl font-bold shadow-lg whitespace-nowrap">
-                    Call Now: {BUSINESS_INFO.phones.business[0]}
-                  </Button>
+                <a href={`tel:${BUSINESS_INFO.phones.business[0]}`} className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-emerald-500 to-green-600 px-8 py-4 text-white font-bold shadow-2xl transition-all duration-300 hover:shadow-3xl hover:scale-105">
+                  <div className="relative z-10 flex items-center justify-center gap-3">
+                    <svg className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <span>Call Now</span>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </a>
-                <Link href="/contact">
-                  <Button variant="outline" className="bg-sky-500/20 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-bold hover:bg-sky-500/30 transition-all border border-white/20 whitespace-nowrap">
-                    Visit Contact Page
-                  </Button>
-                </Link>
+                
+                <button 
+                  onClick={() => setShowQuoteModal(true)}
+                  className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-sky-500 to-blue-600 px-8 py-4 text-white font-bold shadow-2xl transition-all duration-300 hover:shadow-3xl hover:scale-105"
+                >
+                  <div className="relative z-10 flex items-center justify-center">
+                    <span>Get Quote</span>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-sky-600 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Quote Modal */}
+      <QuoteModal isOpen={showQuoteModal} onClose={() => setShowQuoteModal(false)} />
     </div>
   );
 }

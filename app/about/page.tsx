@@ -13,7 +13,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-sky-50">
       {/* Hero Section */}
-      <section className="relative bg-slate-900 text-white py-24 overflow-hidden">
+      <section className="relative bg-slate-900 text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/about-hero.webp"

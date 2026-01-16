@@ -2,8 +2,114 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
 import { BUSINESS_INFO } from '@/lib/constants';
+
+function IconPhone(props: { className?: string }) {
+  return (
+    <svg
+      className={props.className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.77.57 2.6a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.48-1.09a2 2 0 0 1 2.11-.45c.83.25 1.7.45 2.6.57A2 2 0 0 1 22 16.92Z" />
+    </svg>
+  );
+}
+
+function IconMail(props: { className?: string }) {
+  return (
+    <svg
+      className={props.className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M4 4h16v16H4z" />
+      <path d="m22 6-10 7L2 6" />
+    </svg>
+  );
+}
+
+function IconMapPin(props: { className?: string }) {
+  return (
+    <svg
+      className={props.className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  );
+}
+
+function IconClock(props: { className?: string }) {
+  return (
+    <svg
+      className={props.className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <path d="M12 6v6l4 2" />
+    </svg>
+  );
+}
+
+function IconSend(props: { className?: string }) {
+  return (
+    <svg
+      className={props.className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M22 2 11 13" />
+      <path d="M22 2 15 22 11 13 2 9 22 2Z" />
+    </svg>
+  );
+}
+
+function IconCheckCircle(props: { className?: string }) {
+  return (
+    <svg
+      className={props.className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+      <path d="m22 4-10 10-3-3" />
+    </svg>
+  );
+}
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -83,7 +189,7 @@ export default function ContactPage() {
                 {submitted ? (
                   <div className="py-16 text-center">
                     <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <CheckCircle className="w-10 h-10 text-green-600" />
+                      <IconCheckCircle className="w-10 h-10 text-green-600" />
                     </div>
                     <h3 className="text-2xl font-bold text-slate-900 mb-2">Message Sent Successfully!</h3>
                     <p className="text-slate-600">We’ll get back to you as soon as possible.</p>
@@ -134,7 +240,7 @@ export default function ContactPage() {
                           onChange={handleInputChange}
                           required
                           className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all bg-slate-50/50"
-                          placeholder= "98006 20085"
+                          placeholder="98006 20085"
                         />
                       </div>
                     </div>
@@ -178,7 +284,7 @@ export default function ContactPage() {
                       type="submit"
                       className="w-full bg-gradient-to-r from-sky-600 to-sky-700 text-white px-8 py-4 rounded-xl font-semibold hover:from-sky-700 hover:to-sky-800 shadow-lg shadow-sky-500/30 transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2"
                     >
-                      <Send className="w-5 h-5" />
+                      <IconSend className="w-5 h-5" />
                       Send Message
                     </button>
                   </form>
@@ -196,7 +302,7 @@ export default function ContactPage() {
                   {/* Phone */}
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-gradient-to-br from-sky-500 to-sky-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-sky-500/30">
-                      <Phone className="w-6 h-6 text-white" />
+                      <IconPhone className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold text-slate-900 mb-2">Phone</h4>
@@ -217,7 +323,7 @@ export default function ContactPage() {
                   {/* Email */}
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-purple-500/30">
-                      <Mail className="w-6 h-6 text-white" />
+                      <IconMail className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold text-slate-900 mb-2">Email</h4>
@@ -233,7 +339,7 @@ export default function ContactPage() {
                   {/* Address */}
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-emerald-500/30">
-                      <MapPin className="w-6 h-6 text-white" />
+                      <IconMapPin className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold text-slate-900 mb-2">Address</h4>
@@ -248,7 +354,7 @@ export default function ContactPage() {
                   {/* Hours */}
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-amber-500/30">
-                      <Clock className="w-6 h-6 text-white" />
+                      <IconClock className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold text-slate-900 mb-2">Business Hours</h4>
@@ -261,7 +367,7 @@ export default function ContactPage() {
                   {/* WhatsApp */}
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-emerald-500/30">
-                      <Phone className="w-6 h-6 text-white" />
+                      <IconPhone className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold text-slate-900 mb-2">WhatsApp</h4>
@@ -302,7 +408,7 @@ export default function ContactPage() {
               <div className="bg-gradient-to-r from-sky-600 to-sky-700 text-white p-4 lg:p-6">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 lg:w-12 lg:h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                    <MapPin className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
+                    <IconMapPin className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
                   </div>
                   <div>
                     <h3 className="text-lg lg:text-xl font-bold">{BUSINESS_INFO.name}</h3>
@@ -333,14 +439,14 @@ export default function ContactPage() {
                     onClick={() => window.open(`https://maps.google.com/?q=${encodeURIComponent(`${BUSINESS_INFO.address.street}, ${BUSINESS_INFO.address.city}, ${BUSINESS_INFO.address.state} ${BUSINESS_INFO.address.pinCode}`)}`, '_blank')}
                     className="flex-1 bg-sky-600 text-white px-6 py-3 rounded-xl font-bold text-sm lg:text-base hover:bg-sky-700 transition-colors shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
                   >
-                    <Phone className="w-5 h-5" />
+                    <IconMapPin className="w-5 h-5" />
                     Get Directions
                   </button>
                   <button 
                     onClick={() => window.open(`https://www.google.com/maps/place/${encodeURIComponent(`${BUSINESS_INFO.address.street}, ${BUSINESS_INFO.address.city}, ${BUSINESS_INFO.address.state} ${BUSINESS_INFO.address.pinCode}`)}`, '_blank')}
                     className="flex-1 bg-white text-sky-600 border-2 border-sky-600 px-6 py-3 rounded-xl font-bold text-sm lg:text-base hover:bg-sky-50 transition-colors flex items-center justify-center gap-2"
                   >
-                    <MapPin className="w-5 h-5" />
+                    <IconMapPin className="w-5 h-5" />
                     View Larger Map
                   </button>
                 </div>

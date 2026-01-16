@@ -1,6 +1,8 @@
+'use client';
+
 import Image from 'next/image';
+import Link from 'next/link';
 import { Product } from '@/types';
-import Card from './ui/Card';
 import { HiCheckCircle } from 'react-icons/hi';
 
 interface ProductCardProps {
@@ -9,56 +11,69 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <Card>
+    <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-sky-100 flex flex-col group">
       {/* Product Image */}
-      <div className="relative h-64 bg-gray-100 overflow-hidden group">
-        <Image
-          src={product.image}
-          alt={product.title}
-          fill
-          className="object-cover transition-transform duration-300 group-hover:scale-110"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
-        
-        {/* Category Icon Overlay */}
-        <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full p-2 text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          {product.category === 'ro-purifier' && '💧'}
-          {product.category === 'vacuum-cleaner' && '🧹'}
-          {product.category === 'water-softener' && '⚙️'}
-          {product.category === 'commercial-purifier' && '🏢'}
-          {product.category === 'installation-service' && '⚙️'}
-          {product.category === 'accessories' && '🔧'}
+      <div className="relative group">
+        <div className="aspect-[4/3] overflow-hidden">
+          <Image
+            src={product.image}
+            alt={product.title}
+            fill
+            className="object-cover transform group-hover:scale-110 transition-transform duration-500"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
         </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
-
+      
       {/* Product Info */}
-      <div className="p-6">
-        <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-cyan-700 transition-colors duration-300">
-          {product.title}
-        </h3>
-        <p className="text-gray-600 mb-4 line-clamp-2 group-hover:text-gray-700 transition-colors duration-300">
-          {product.description}
-        </p>
-
-        {/* Features */}
-        {product.features && product.features.length > 0 && (
-          <div className="space-y-2 mb-4">
-            {product.features.slice(0, 3).map((feature, index) => (
-              <div key={index} className="flex items-start space-x-2">
-                <HiCheckCircle className="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" />
-                <span className="text-sm text-gray-700">{feature}</span>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {/* Category Badge */}
-        <div className="mt-4">
-          <span className="inline-block px-3 py-1 text-xs font-medium bg-cyan-100 text-cyan-700 rounded-full hover:bg-cyan-200 transition-colors duration-300">
+      <div className="p-6 flex-1 flex flex-col">
+        <div className="flex items-start justify-between mb-3">
+          <h3 className="text-lg font-bold text-slate-900 flex-1">{product.title}</h3>
+          <span className="bg-sky-100 text-sky-700 px-2 py-1 rounded-lg text-xs font-semibold">
             {product.category?.replace('-', ' ').toUpperCase()}
           </span>
         </div>
+        
+        <p className="text-slate-600 text-sm mb-4 leading-relaxed flex-1">{product.description}</p>
+        
+        {/* Key Features */}
+        <div className="mb-4">
+          <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Key Features</h4>
+          <div className="flex flex-wrap gap-2">
+            {product.features?.slice(0, 4).map((feature, idx) => (
+              <span 
+                key={idx} 
+                className="bg-slate-100 text-slate-700 px-2 py-1 rounded text-xs hover:bg-slate-200 transition-colors duration-200"
+              >
+                {feature}
+              </span>
+            ))}
+          </div>
+        </div>
+        
+        {/* Action Buttons */}
+        <div className="flex gap-3 pt-4 border-t border-sky-100 mt-auto">
+          <Link href="/contact" className="flex-1">
+            <button className="w-full bg-sky-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-sky-700 transition-colors duration-200 transform hover:scale-105">
+              Get Quote
+            </button>
+          </Link>
+          <a 
+            href="https://wa.me/919426944949?text=Hi!%20I'm%20interested%20in%20the%20{encodeURIComponent(product.title)}"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1"
+          >
+            <button className="w-full border border-green-500 text-green-600 px-4 py-2 rounded-lg font-semibold hover:bg-green-50 transition-colors duration-200 transform hover:scale-105 flex items-center justify-center gap-2">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+              </svg>
+              WhatsApp
+            </button>
+          </a>
+        </div>
       </div>
-    </Card>
+    </div>
   );
 }

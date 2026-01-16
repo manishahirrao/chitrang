@@ -3,7 +3,10 @@
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
 import GalleryGrid from '@/components/GalleryGrid';
+import QuoteModal from '@/components/QuoteModal';
 import { galleryImages, categories } from '@/data/gallery';
 
 // Dynamic import for lightbox (heavy component)
@@ -15,6 +18,7 @@ import 'yet-another-react-lightbox/styles.css';
 export default function GalleryPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [lightboxIndex, setLightboxIndex] = useState(-1);
+  const [showQuoteModal, setShowQuoteModal] = useState(false);
 
   const filteredImages =
     selectedCategory === 'all'
@@ -29,12 +33,53 @@ export default function GalleryPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[var(--color-primary-600)] to-[var(--color-primary-800)] text-white py-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Gallery</h1>
-          <p className="text-xl text-blue-100">
-            Explore our installations, products, and happy customers
-          </p>
+      <section className="relative bg-slate-900 text-white overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/gallery-hero.webp"
+            alt="Gallery"
+            fill
+            priority
+            className="object-cover opacity-40"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-900/50 to-transparent" />
+        </div>
+        
+        <div className="relative max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-20 flex flex-col lg:flex-row items-center gap-10 text-white z-10">
+          <div className="flex-1">
+            <p className="text-xs uppercase tracking-[0.4em] mb-4 text-sky-200 font-light">Our Gallery</p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+              Explore Our <span className="text-sky-300">Work Gallery</span>
+            </h1>
+            <p className="text-base md:text-lg text-sky-100 max-w-2xl mb-8 leading-relaxed font-light">
+              Browse through our installations, product showcases, and satisfied customer stories. See the quality and craftsmanship we bring to every project.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <button 
+                onClick={() => setShowQuoteModal(true)}
+                className="bg-white text-sky-900 px-8 py-3 rounded-lg font-bold text-sm shadow-lg hover:bg-sky-50 transition-all transform hover:scale-105"
+              >
+                Get Quote
+              </button>
+              <Link href="/products">
+                <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-sm hover:bg-white hover:text-sky-900 transition-all">
+                  View Products
+                </button>
+              </Link>
+            </div>
+          </div>
+          
+          {/* Side Image */}
+          <div className="flex-1 max-w-md w-full">
+            <div className="bg-sky-900/40 rounded-2xl overflow-hidden shadow-2xl border border-sky-700/70">
+              <img 
+                src="/images/home-hero2.jpg" 
+                alt="Gallery Showcase" 
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -82,6 +127,9 @@ export default function GalleryPage() {
         close={() => setLightboxIndex(-1)}
         slides={lightboxSlides}
       />
+
+      {/* Quote Modal */}
+      <QuoteModal isOpen={showQuoteModal} onClose={() => setShowQuoteModal(false)} />
     </div>
   );
 }
