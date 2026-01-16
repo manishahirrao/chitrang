@@ -1,36 +1,160 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Chitransh Agency Website
 
-## Getting Started
+Modern, premium, professional multi-page website for Chitransh Agency - Leading provider of RO Water Purifiers, Vacuum Cleaners, and Water Softeners in Bhopal.
 
-First, run the development server:
+## 🚀 Features
+
+### Pages
+- **Homepage** - Hero section, features, products preview, CTA
+- **About** - Company information, mission, owner details
+- **Products** - Complete product catalog with categories
+- **Gallery** - Image gallery with lightbox and category filtering
+- **Contact** - Contact information, map, and inquiry options
+
+### Components
+- Responsive navigation (desktop & mobile)
+- Floating WhatsApp button
+- Inquiry modal with form validation
+- Product cards with features
+- Gallery grid with lightbox
+- Professional footer
+
+### Technical Features
+- ✅ Next.js 16 with App Router
+- ✅ TypeScript for type safety
+- ✅ Tailwind CSS for styling
+- ✅ Fully responsive design
+- ✅ SEO optimized with metadata
+- ✅ Sitemap and robots.txt
+- ✅ Custom 404 page
+- ✅ Performance optimized
+- ✅ Accessibility compliant
+- ✅ Static site generation (SSG)
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 16.1.2
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Form Validation:** React Hook Form + Zod
+- **Icons:** React Icons
+- **Lightbox:** Yet Another React Lightbox
+- **Animations:** Framer Motion
+
+## 📦 Installation
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌐 Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open [http://localhost:3000](http://localhost:3000) to view the website.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Project Structure
 
-## Learn More
+```
+website/
+├── app/                    # Next.js app directory
+│   ├── layout.tsx         # Root layout with metadata
+│   ├── page.tsx           # Homepage
+│   ├── about/             # About page
+│   ├── products/          # Products page
+│   ├── gallery/           # Gallery page
+│   ├── contact/           # Contact page
+│   ├── not-found.tsx      # 404 page
+│   ├── sitemap.ts         # Sitemap generation
+│   └── robots.ts          # Robots.txt generation
+├── components/            # React components
+│   ├── layout/           # Header, Footer, MobileMenu
+│   ├── ui/               # Button, Card, Input, Modal
+│   ├── home/             # Homepage components
+│   ├── InquiryModal.tsx  # Contact form modal
+│   ├── WhatsAppButton.tsx # Floating WhatsApp button
+│   ├── ProductCard.tsx   # Product display card
+│   └── GalleryGrid.tsx   # Gallery grid component
+├── lib/                   # Utilities
+│   ├── constants.ts      # Business information
+│   └── validation.ts     # Form validation schemas
+├── types/                 # TypeScript types
+│   └── index.ts          # Type definitions
+├── data/                  # Data files
+│   ├── products.ts       # Product data
+│   └── gallery.ts        # Gallery images
+└── public/               # Static assets
+    └── images/           # Images directory
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🎨 Color Scheme
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Primary Blue:** #3b82f6 (Trust, professionalism)
+- **Secondary Green:** #22c55e (Purity, eco-friendly)
+- **Accent Orange:** #f59e0b (Energy, action)
+- **WhatsApp Green:** #25D366
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📱 Contact Information
 
-## Deploy on Vercel
+- **Business:** 9300010566, 9425043613
+- **Support:** 0755-4297797
+- **Email:** CHITRANSHAGENCY21@GMAIL.COM
+- **Address:** 49 Lala Lajpat Rai Colony Raisen Road, Bhopal, 462023
+- **Hours:** 9:00 AM TO 9:00PM
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📋 Requirements Checklist
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+✅ Multi-page website (Home, About, Products, Gallery, Contact)
+✅ Popup inquiry form
+✅ Floating WhatsApp button
+✅ Responsive design (mobile, tablet, desktop)
+✅ Modern, premium design aesthetic
+✅ SEO optimized
+✅ Fast loading performance
+✅ Accessibility compliant
+✅ Professional color scheme
+✅ All business information displayed
+
+## 🚀 Deployment
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
+
+**Recommended:** Deploy to Vercel for zero-configuration deployment.
+
+## 📝 Documentation
+
+- [DEPLOYMENT.md](./DEPLOYMENT.md) - Deployment guide
+- [CONTENT_MIGRATION.md](./CONTENT_MIGRATION.md) - Content migration checklist
+- [RESPONSIVE_DESIGN.md](./RESPONSIVE_DESIGN.md) - Responsive design documentation
+- [ACCESSIBILITY.md](./ACCESSIBILITY.md) - Accessibility checklist
+- [BROWSER_COMPATIBILITY.md](./BROWSER_COMPATIBILITY.md) - Browser support
+
+## 🔧 Configuration
+
+### Business Information
+Update business details in `lib/constants.ts`
+
+### Products
+Add/edit products in `data/products.ts`
+
+### Gallery
+Add/edit gallery images in `data/gallery.ts`
+
+### Styling
+Customize colors in `app/globals.css`
+
+## 📄 License
+
+© 2026 Chitransh Agency. All rights reserved.
+
+## 🤝 Support
+
+For technical support or questions, contact the development team.
