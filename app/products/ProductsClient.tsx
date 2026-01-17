@@ -27,16 +27,16 @@ export default function ProductsClient() {
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-900/50 to-transparent" />
         </div>
 
-        <div className="relative max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-20 flex flex-col lg:flex-row items-center gap-10 text-white z-10">
-          <div className="flex-1">
-            <p className="text-xs uppercase tracking-[0.4em] mb-4 text-sky-200 font-light">Our Products</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 flex flex-col lg:flex-row items-center gap-8 lg:gap-10 text-white z-10 min-h-[50vh] lg:min-h-[60vh]">
+          <div className="flex-1 text-center lg:text-left">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-3 sm:mb-4 text-sky-200 font-light">Our Products</p>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 sm:mb-6">
               Premium <span className="text-sky-300">Water Solutions</span>
             </h1>
-            <p className="text-base md:text-lg text-sky-100 max-w-2xl mb-8 leading-relaxed font-light">
+            <p className="text-sm sm:text-base md:text-lg text-sky-100 max-w-2xl mb-6 sm:mb-8 leading-relaxed font-light">
               Explore our comprehensive range of RO water purifiers, vacuum cleaners, water softeners, and accessories. Quality products for residential and commercial use.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
               <button
                 onClick={() => setShowQuoteModal(true)}
                 className="bg-white text-sky-900 px-8 py-3 rounded-lg font-bold text-sm shadow-lg hover:bg-sky-50 transition-all transform hover:scale-105"
@@ -186,9 +186,7 @@ export default function ProductsClient() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-8 py-4 bg-cyan-600 text-white rounded-lg font-medium hover:bg-cyan-700 hover:shadow-xl hover:shadow-cyan-500/25 transform hover:scale-105 transition-all duration-300"
               >
-                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 12h.01M12 12h.01M16 8c0 3.23-1.51 4.5-4.5 4.5-4.5S19.5 3.23 16 8c0-3.23 1.51-4.5 4.5-4.5 4.5S12.5 8.77 16 8c0 3.23 1.51 4.5 4.5 4.5S8.5 12.77 16 8z" />
-                </svg>
+               
                 Contact Our Experts
               </a>
             </div>

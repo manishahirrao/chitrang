@@ -26,16 +26,16 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-900/50 to-transparent" />
         </div>
         
-        <div className="relative max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-20 flex flex-col lg:flex-row items-center gap-10 text-white z-10">
-          <div className="flex-1">
-            <p className="text-xs uppercase tracking-[0.4em] mb-4 text-sky-200 font-light">About Us</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 flex flex-col lg:flex-row items-center gap-8 lg:gap-10 text-white z-10 min-h-[50vh] lg:min-h-[60vh]">
+          <div className="flex-1 text-center lg:text-left">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-3 sm:mb-4 text-sky-200 font-light">About Us</p>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 sm:mb-6">
               Trusted <span className="text-sky-300">Water Solutions</span> Since 2003
             </h1>
-            <p className="text-base md:text-lg text-sky-100 max-w-2xl mb-8 leading-relaxed font-light">
+            <p className="text-sm sm:text-base md:text-lg text-sky-100 max-w-2xl mb-6 sm:mb-8 leading-relaxed font-light">
               Established in 2003, Chitransh Agency has been serving the people of Bhopal with premium quality water purification systems and home cleaning solutions. We are your trusted partner for pure water and healthy living.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
               <Link href="/contact">
                 <button className="bg-white text-sky-900 px-8 py-3 rounded-lg font-bold text-sm shadow-lg hover:bg-sky-50 transition-all transform hover:scale-105">
                   Contact Us
@@ -90,6 +90,71 @@ export default function AboutPage() {
               <p className="text-slate-600 leading-relaxed">
                 To be the leading water treatment solutions provider in Central India, known for innovation, quality, and customer satisfaction.
               </p>
+              <div className="mt-6 bg-sky-50 rounded-2xl p-6 border border-sky-200">
+                <p className="text-sm font-semibold text-slate-900 mb-2">What you can expect</p>
+                <ul className="space-y-2 text-slate-700">
+                  <li className="flex items-start gap-2">
+                    <HiCheckCircle className="w-5 h-5 text-sky-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm leading-relaxed">Honest guidance based on your water quality and daily usage</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <HiCheckCircle className="w-5 h-5 text-sky-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm leading-relaxed">Neat installation and clear product demo for your family or staff</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <HiCheckCircle className="w-5 h-5 text-sky-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm leading-relaxed">Fast support for service, spares, and scheduled maintenance</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-6 mb-12">
+            <div className="bg-gradient-to-br from-sky-50 to-white rounded-2xl p-6 border border-sky-200">
+              <h3 className="text-xl font-bold text-slate-900 mb-3">What We Do</h3>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                We supply, install, and service a complete range of water treatment and cleaning systems for residential, commercial, and industrial needs. We help you select the correct capacity and configuration, so you get consistent performance and lower maintenance.
+              </p>
+              <div className="relative h-40 sm:h-48 rounded-xl overflow-hidden bg-slate-100">
+                <Image
+                  src="/images/products/kent-ace-ro-water-purifier.webp"
+                  alt="Water purification products"
+                  fill
+                  className="object-contain"
+                  sizes="100%"
+                />
+              </div>
+            </div>
+            <div className="bg-gradient-to-br from-sky-50 to-white rounded-2xl p-6 border border-sky-200">
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Who We Serve</h3>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                Homes, apartments, offices, restaurants, schools, hospitals, and industrial units across Bhopal and nearby areas—anywhere clean water and reliable uptime matter.
+              </p>
+              <div className="relative h-40 sm:h-48 rounded-xl overflow-hidden bg-slate-100">
+                <Image
+                  src="/images/home-hero1.jpg"
+                  alt="Commercial and residential clients"
+                  fill
+                  className="object-cover"
+                  sizes="100%"
+                />
+              </div>
+            </div>
+            <div className="bg-gradient-to-br from-sky-50 to-white rounded-2xl p-6 border border-sky-200">
+              <h3 className="text-xl font-bold text-slate-900 mb-3">What We Focus On</h3>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                Correct selection, clean installation, and dependable after-sales. Whether it's a domestic RO or a commercial plant, we make sure the system is installed properly and stays supported.
+              </p>
+              <div className="relative h-40 sm:h-48 rounded-xl overflow-hidden bg-slate-100">
+                <Image
+                  src="/images/contact-hero.webp"
+                  alt="Professional installation and service"
+                  fill
+                  className="object-cover"
+                  sizes="100%"
+                />
+              </div>
             </div>
           </div>
 
@@ -126,33 +191,75 @@ export default function AboutPage() {
               <h3 className="text-xl font-semibold text-slate-900 mb-3">Competitive Pricing</h3>
               <p className="text-slate-600 leading-relaxed">Best prices in Bhopal without compromising on quality</p>
             </div>
+            <div className="bg-gradient-to-br from-sky-50 to-sky-100 rounded-2xl p-6 border border-sky-200 hover:shadow-lg transition-shadow">
+              <div className="w-14 h-14 bg-sky-600 rounded-xl flex items-center justify-center mb-4">
+                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">On-Time Service</h3>
+              <p className="text-slate-600 leading-relaxed">Quick response for installations, servicing, and spare parts support</p>
+            </div>
           </div>
 
-          {/* Business Details */}
           <div className="bg-gradient-to-br from-sky-50 to-white rounded-2xl p-8 border border-sky-200">
-            <div className="text-center mb-6">
-              <p className="text-xs uppercase tracking-[0.4em] text-sky-500 mb-3 font-light">Business Information</p>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Company Details</h3>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="text-center">
-                <p className="text-sm text-slate-600 mb-1">Nature of Business</p>
-                <p className="font-semibold text-slate-900">Service Provider</p>
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-4">Our Commitment to Quality</h3>
+                <p className="text-slate-600 leading-relaxed mb-4">
+                  Every product we sell and install meets strict quality standards. We work with leading brands like Kent, LG, and Eureka Forbes to ensure you get reliable, long-lasting water treatment solutions.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <div className="bg-white rounded-lg px-3 py-2 border border-sky-200">
+                    <p className="text-xs font-semibold text-sky-600">ISO Certified</p>
+                  </div>
+                  <div className="bg-white rounded-lg px-3 py-2 border border-sky-200">
+                    <p className="text-xs font-semibold text-sky-600">Warranty Protected</p>
+                  </div>
+                  <div className="bg-white rounded-lg px-3 py-2 border border-sky-200">
+                    <p className="text-xs font-semibold text-sky-600">Expert Support</p>
+                  </div>
+                </div>
               </div>
-              <div className="text-center">
-                <p className="text-sm text-slate-600 mb-1">Year of Establishment</p>
-                <p className="font-semibold text-slate-900">2003</p>
-              </div>
-              <div className="text-center">
-                <p className="text-sm text-slate-600 mb-1">Legal Status</p>
-                <p className="font-semibold text-slate-900">Proprietorship</p>
-              </div>
-              <div className="text-center">
-                <p className="text-sm text-slate-600 mb-1">Location</p>
-                <p className="font-semibold text-slate-900">{BUSINESS_INFO.address.city}, {BUSINESS_INFO.address.state}</p>
+              <div className="relative h-56 sm:h-64 rounded-xl overflow-hidden bg-slate-100">
+                <Image
+                  src="/images/products/kent-automatic-water-softener.webp"
+                  alt="Quality water treatment equipment"
+                  fill
+                  className="object-contain"
+                  sizes="100%"
+                />
               </div>
             </div>
           </div>
+
+          <div className="py-8">
+            <div className="bg-gradient-to-r from-sky-600 to-sky-700 rounded-3xl p-8 md:p-10 text-white shadow-2xl">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+              <div className="flex-1">
+                <p className="text-sm uppercase tracking-[0.3em] text-sky-200 mb-3 font-light">Need the right solution?</p>
+                <h3 className="text-2xl md:text-3xl font-bold mb-3">Talk to our team for the best fit</h3>
+                <p className="text-sky-100 leading-relaxed">
+                  Share your water issue, location, and daily usage. We’ll recommend the right purifier/softener capacity and guide you on installation, AMC, and maintenance.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href={`tel:${BUSINESS_INFO.phones.business[0]}`}
+                  className="bg-white text-sky-900 px-8 py-3 rounded-lg font-bold text-sm shadow-lg hover:bg-sky-50 transition-all transform hover:scale-105"
+                >
+                  Call Now
+                </a>
+                <Link href="/contact">
+                  <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-sm hover:bg-white hover:text-sky-900 transition-all">
+                    Request a Quote
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+        </div>
         </div>
       </section>
     </div>

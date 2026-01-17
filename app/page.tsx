@@ -75,6 +75,145 @@ export default function Home() {
     <div className="min-h-screen bg-sky-50">
       <HeroSection />
       <FeaturesSection />
+
+      <section className="bg-sky-50 py-14 sm:py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+            <div>
+              <p className="text-xs uppercase tracking-[0.4em] text-sky-500 mb-3 font-light">Who We Are</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+                Clear guidance. Right product. Reliable service.
+              </h2>
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-6">
+                {BUSINESS_INFO.name} helps you choose the right water purification and cleaning solution based on your usage, water quality, and budget. From domestic RO to commercial systems and water softeners, we focus on correct selection, clean installation, and dependable after-sales support.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                <div className="bg-white rounded-2xl border border-sky-100 p-5 shadow-sm">
+                  <p className="text-sm text-slate-500 mb-1">Since</p>
+                  <p className="text-lg font-semibold text-slate-900">2003</p>
+                  <p className="text-sm text-slate-600 mt-2">Serving homes, offices, and institutions in and around Bhopal.</p>
+                </div>
+                <div className="bg-white rounded-2xl border border-sky-100 p-5 shadow-sm">
+                  <p className="text-sm text-slate-500 mb-1">Support</p>
+                  <p className="text-lg font-semibold text-slate-900">Installation & AMC</p>
+                  <p className="text-sm text-slate-600 mt-2">Timely service, filter changes, and maintenance plans.</p>
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link href="/about">
+                  <Button variant="primary" className="bg-sky-600 hover:bg-sky-700 px-7 py-3 rounded-lg font-semibold">
+                    Learn More About Us
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button variant="outline" className="px-7 py-3 rounded-lg font-semibold">
+                    Talk to an Expert
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="relative h-72 sm:h-80 lg:h-[420px] rounded-3xl overflow-hidden shadow-xl border border-sky-100">
+                <Image
+                  src="/images/contact-hero.webp"
+                  alt="Water treatment and service"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent" />
+              </div>
+              <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div className="bg-white rounded-2xl border border-sky-100 p-4 shadow-sm">
+                  <p className="text-sm font-semibold text-slate-900">Free Consultation</p>
+                  <p className="text-sm text-slate-600 mt-1">Share your water issue and requirements.</p>
+                </div>
+                <div className="bg-white rounded-2xl border border-sky-100 p-4 shadow-sm">
+                  <p className="text-sm font-semibold text-slate-900">Right Fit Solution</p>
+                  <p className="text-sm text-slate-600 mt-1">Recommendation based on water type & usage.</p>
+                </div>
+                <div className="bg-white rounded-2xl border border-sky-100 p-4 shadow-sm">
+                  <p className="text-sm font-semibold text-slate-900">After-Sales Care</p>
+                  <p className="text-sm text-slate-600 mt-1">Service reminders, spares, and AMC support.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 sm:mt-14">
+            <div className="text-center mb-8">
+              <p className="text-xs uppercase tracking-[0.4em] text-sky-500 mb-3 font-light">How It Works</p>
+              <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">A simple, reliable process</h3>
+              <p className="text-slate-600 max-w-3xl mx-auto">We keep it straightforward: understand your needs, recommend the correct system, install neatly, and stay available for service.</p>
+            </div>
+            <div className="grid md:grid-cols-4 gap-4">
+              <div className="bg-white rounded-2xl border border-sky-100 p-6 shadow-sm">
+                <p className="text-sky-600 text-sm font-semibold mb-2">Step 1</p>
+                <p className="text-slate-900 font-semibold mb-2">Requirement Check</p>
+                <p className="text-sm text-slate-600 leading-relaxed">We confirm TDS/hardness, daily usage, and installation location.</p>
+              </div>
+              <div className="bg-white rounded-2xl border border-sky-100 p-6 shadow-sm">
+                <p className="text-sky-600 text-sm font-semibold mb-2">Step 2</p>
+                <p className="text-slate-900 font-semibold mb-2">Product Recommendation</p>
+                <p className="text-sm text-slate-600 leading-relaxed">We suggest the right RO/softener/plant capacity with clear pricing.</p>
+              </div>
+              <div className="bg-white rounded-2xl border border-sky-100 p-6 shadow-sm">
+                <p className="text-sky-600 text-sm font-semibold mb-2">Step 3</p>
+                <p className="text-slate-900 font-semibold mb-2">Installation & Demo</p>
+                <p className="text-sm text-slate-600 leading-relaxed">Professional installation, testing, and guidance for daily use.</p>
+              </div>
+              <div className="bg-white rounded-2xl border border-sky-100 p-6 shadow-sm">
+                <p className="text-sky-600 text-sm font-semibold mb-2">Step 4</p>
+                <p className="text-slate-900 font-semibold mb-2">Service & AMC</p>
+                <p className="text-sm text-slate-600 leading-relaxed">Filter changes, repairs, and maintenance plans to keep it running.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Preview Section */}
+      <section className="bg-sky-50 py-16 md:py-20">
+        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-xs uppercase tracking-[0.4em] text-sky-500 mb-3 font-light">Services</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Installation, AMC & After-Sales Support</h2>
+            <p className="text-base md:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              From correct product selection to clean installation and reliable maintenance, our team helps you keep your system performing at its best.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
+            <div className="bg-white rounded-2xl border border-sky-100 p-6 shadow-sm">
+              <h3 className="text-slate-900 font-semibold text-lg mb-2">Professional Installation</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Proper plumbing & electrical connections, testing, and demo for RO purifiers, softeners, and commercial plants.
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl border border-sky-100 p-6 shadow-sm">
+              <h3 className="text-slate-900 font-semibold text-lg mb-2">AMC & Preventive Maintenance</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Scheduled service visits, cleaning, and performance checks to reduce breakdowns and increase life.
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl border border-sky-100 p-6 shadow-sm">
+              <h3 className="text-slate-900 font-semibold text-lg mb-2">Filter & Spare Replacement</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Genuine filters/membranes and reliable service support to maintain water quality and system health.
+              </p>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <Link href="/services">
+              <Button variant="primary" className="bg-sky-600 hover:bg-sky-700 px-8 py-3 rounded-lg font-semibold">
+                Explore Services
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
       
       {/* Products Preview Section */}
       <section className="bg-white py-16 md:py-20">
@@ -160,47 +299,47 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <p className="text-xs uppercase tracking-[0.4em] text-sky-500 mb-3 font-light">Testimonials</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">What Our Clients Say</h2>
-            <p className="text-base md:text-lg text-slate-600 max-w-3xl mx-auto">
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] sm:tracking-[0.4em] text-sky-500 mb-2 sm:mb-3 font-light">Testimonials</p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-3 sm:mb-4">What Our Clients Say</h2>
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-3xl mx-auto px-4">
               Trusted by leading industries for reliable water treatment solutions and exceptional service
             </p>
           </div>
 
-          <div className="relative max-w-4xl mx-auto">
+          <div className="relative max-w-4xl mx-auto px-2 sm:px-4">
             {/* Main Testimonial Card */}
-            <div className="bg-gradient-to-br from-sky-50 to-white rounded-2xl p-8 border border-sky-100 shadow-lg transition-all duration-500">
-              <div className="flex mb-6">
+            <div className="bg-gradient-to-br from-sky-50 to-white rounded-2xl p-6 sm:p-8 border border-sky-100 shadow-lg transition-all duration-500">
+              <div className="flex mb-4 sm:mb-6 justify-center sm:justify-start">
                 {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                  <svg key={i} className="w-6 h-6 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                  <svg key={i} className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400 fill-current" viewBox="0 0 20 20">
                     <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
                   </svg>
                 ))}
               </div>
-              <p className="text-slate-700 mb-6 leading-relaxed text-lg italic">
+              <p className="text-slate-700 mb-4 sm:mb-6 leading-relaxed text-base sm:text-lg italic text-center sm:text-left">
                 "{testimonials[currentTestimonial].content}"
               </p>
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-sky-200 rounded-full flex items-center justify-center">
-                  <span className="text-sky-700 font-bold text-xl">{testimonials[currentTestimonial].initial}</span>
+              <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-center sm:text-left">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-sky-200 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-sky-700 font-bold text-lg sm:text-xl">{testimonials[currentTestimonial].initial}</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-slate-900 text-lg">{testimonials[currentTestimonial].name}</h4>
-                  <p className="text-sm text-slate-600">{testimonials[currentTestimonial].position}</p>
+                  <h4 className="font-semibold text-slate-900 text-base sm:text-lg">{testimonials[currentTestimonial].name}</h4>
+                  <p className="text-xs sm:text-sm text-slate-600">{testimonials[currentTestimonial].position}</p>
                 </div>
               </div>
             </div>
 
             {/* Testimonial Indicators */}
-            <div className="flex justify-center gap-2 mt-6">
+            <div className="flex justify-center gap-2 mt-4 sm:mt-6">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                     index === currentTestimonial
                       ? 'bg-sky-600 scale-125'
                       : 'bg-sky-300 hover:bg-sky-400'
@@ -212,17 +351,17 @@ export default function Home() {
             {/* Navigation Buttons */}
             <button
               onClick={() => setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 border border-sky-200 hover:border-sky-300"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 sm:p-3 shadow-lg hover:shadow-xl transition-all duration-300 border border-sky-200 hover:border-sky-300 z-10"
             >
-              <svg className="w-5 h-5 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
             <button
               onClick={() => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 border border-sky-200 hover:border-sky-300"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 sm:p-3 shadow-lg hover:shadow-xl transition-all duration-300 border border-sky-200 hover:border-sky-300 z-10"
             >
-              <svg className="w-5 h-5 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>

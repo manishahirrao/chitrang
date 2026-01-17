@@ -4,49 +4,63 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Product } from '@/types';
 import { HiCheckCircle } from 'react-icons/hi';
+import { BUSINESS_INFO } from '@/lib/constants';
 
 interface ProductCardProps {
   product: Product;
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
+  // Create WhatsApp message with product details
+  const whatsappMessage = `Hi! I'm interested in the ${product.title}
+
+Category: ${product.category?.replace('-', ' ').toUpperCase() || 'N/A'}
+${product.description ? `Description: ${product.description}` : ''}
+${product.features?.length ? `Key Features: ${product.features.slice(0, 3).join(', ')}` : ''}
+
+Please provide more details and pricing.
+
+Sent from: ${BUSINESS_INFO.name} Website`;
+
+  const whatsappUrl = `https://wa.me/91${BUSINESS_INFO.phones.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(whatsappMessage)}`;
+
   return (
     <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-sky-100 flex flex-col group">
       {/* Product Image */}
       <div className="relative group">
-        <div className="aspect-[4/3] overflow-hidden">
+        <div className="aspect-[4/3] sm:aspect-[16/9] overflow-hidden">
           <Image
             src={product.image}
             alt={product.title}
             fill
             className="object-cover transform group-hover:scale-110 transition-transform duration-500"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
       
       {/* Product Info */}
-      <div className="p-6 flex-1 flex flex-col">
-        <div className="flex items-start justify-between mb-3">
-          <h3 className="text-lg font-bold text-slate-900 flex-1">{product.title}</h3>
-          <span className="bg-sky-100 text-sky-700 px-2 py-1 rounded-lg text-xs font-semibold">
+      <div className="p-4 sm:p-6 flex-1 flex flex-col">
+        <div className="flex items-start justify-between mb-2 sm:mb-3">
+          <h3 className="text-base sm:text-lg font-bold text-slate-900 flex-1 pr-2">{product.title}</h3>
+          <span className="bg-sky-100 text-sky-700 px-2 py-1 rounded-lg text-xs font-semibold whitespace-nowrap">
             {product.category?.replace('-', ' ').toUpperCase()}
           </span>
         </div>
         
-        <p className="text-slate-600 text-sm mb-4 leading-relaxed flex-1">{product.description}</p>
+        <p className="text-slate-600 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed flex-1 line-clamp-3">{product.description}</p>
         
         {/* Key Features */}
-        <div className="mb-4">
+        <div className="mb-3 sm:mb-4">
           <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Key Features</h4>
-          <div className="flex flex-wrap gap-2">
-            {product.features?.slice(0, 4).map((feature, idx) => (
+          <div className="flex flex-wrap gap-1 sm:gap-2">
+            {product.features?.slice(0, 3).map((feature, idx) => (
               <span 
                 key={idx} 
                 className="bg-slate-100 text-slate-700 px-2 py-1 rounded text-xs hover:bg-slate-200 transition-colors duration-200"
               >
-                {feature}
+                {feature.length > 15 ? `${feature.substring(0, 15)}...` : feature}
               </span>
             ))}
           </div>
@@ -60,7 +74,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             </button>
           </Link>
           <a 
-            href="https://wa.me/919426944949?text=Hi!%20I'm%20interested%20in%20the%20{encodeURIComponent(product.title)}"
+            href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1"

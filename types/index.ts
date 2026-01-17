@@ -16,6 +16,11 @@ export interface GalleryImage {
   src: string;
   alt: string;
   category?: string;
+  title?: string;
+  description?: string;
+  location?: string;
+  date?: string;
+  client?: string;
   width?: number;
   height?: number;
   thumbnail?: string;

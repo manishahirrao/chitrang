@@ -149,7 +149,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-sky-50">
       {/* Hero Section */}
-      <section className="relative text-white py-24 overflow-hidden">
+      <section className="relative text-white py-16 sm:py-20 md:py-24 overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/contact-hero.webp"
@@ -164,26 +164,26 @@ export default function ContactPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
               Contact <span className="text-sky-400">{BUSINESS_INFO.name}</span>
             </h1>
-            <p className="text-xl text-sky-100 leading-relaxed">
-              Call, email, or send us a message. We’ll help you choose the right solution for your home or business.
+            <p className="text-lg sm:text-xl text-sky-100 leading-relaxed">
+              Call, email, or send us a message. We'll help you choose the right solution for your home or business.
             </p>
           </div>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-3 gap-8">
+      <section className="py-12 sm:py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
+          <div className="grid lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {/* Contact Form - Takes 2 columns */}
             <div className="lg:col-span-2">
-              <div className="bg-white rounded-3xl shadow-xl shadow-slate-200/50 p-8 md:p-12 border border-slate-100">
-                <div className="mb-8">
-                  <h2 className="text-3xl font-bold text-slate-900 mb-3">Send us a message</h2>
-                  <p className="text-slate-600">Fill out the form below and we’ll get back to you within 24 hours</p>
+              <div className="bg-white rounded-3xl shadow-xl shadow-slate-200/50 p-4 sm:p-6 md:p-8 border border-slate-100 overflow-hidden">
+                <div className="mb-6 sm:mb-8">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2 sm:mb-3">Send us a message</h2>
+                  <p className="text-slate-600">Fill out the form below and we'll get back to you within 24 hours</p>
                 </div>
 
                 {submitted ? (
@@ -195,8 +195,8 @@ export default function ContactPage() {
                     <p className="text-slate-600">We’ll get back to you as soon as possible.</p>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-6">
+                  <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                       <div>
                         <label className="block text-sm font-semibold text-slate-700 mb-2">
                           Full Name <span className="text-red-500">*</span>
@@ -207,8 +207,8 @@ export default function ContactPage() {
                           value={formData.name}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all bg-slate-50/50"
-                          placeholder="Rakesh Doe"
+                          className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all bg-slate-50/50 text-sm sm:text-base"
+                          placeholder="Rakesh Das"
                         />
                       </div>
 
@@ -222,13 +222,13 @@ export default function ContactPage() {
                           value={formData.email}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all bg-slate-50/50"
+                          className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all bg-slate-50/50 text-sm sm:text-base"
                           placeholder="rakesh@example.com"
                         />
                       </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                       <div>
                         <label className="block text-sm font-semibold text-slate-700 mb-2">
                           Phone Number <span className="text-red-500">*</span>
@@ -239,7 +239,7 @@ export default function ContactPage() {
                           value={formData.phone}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all bg-slate-50/50"
+                          className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all bg-slate-50/50 text-sm sm:text-base"
                           placeholder="98006 20085"
                         />
                       </div>
@@ -253,7 +253,7 @@ export default function ContactPage() {
                         name="subject"
                         value={formData.subject}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all bg-slate-50/50"
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all bg-slate-50/50 text-sm sm:text-base"
                       >
                         <option value="">Select a subject</option>
                         <option value="product-inquiry">Product Inquiry</option>
@@ -274,17 +274,17 @@ export default function ContactPage() {
                         value={formData.message}
                         onChange={handleInputChange}
                         required
-                        rows={6}
-                        className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all resize-none bg-slate-50/50"
+                        rows={4}
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all resize-none bg-slate-50/50 text-sm sm:text-base"
                         placeholder="Tell us about your requirements or questions..."
                       />
                     </div>
 
                     <button
                       type="submit"
-                      className="w-full bg-gradient-to-r from-sky-600 to-sky-700 text-white px-8 py-4 rounded-xl font-semibold hover:from-sky-700 hover:to-sky-800 shadow-lg shadow-sky-500/30 transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2"
+                      className="w-full bg-gradient-to-r from-sky-600 to-sky-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:from-sky-700 hover:to-sky-800 shadow-lg shadow-sky-500/30 transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base"
                     >
-                      <IconSend className="w-5 h-5" />
+                      <IconSend className="w-4 h-4 sm:w-5 sm:h-5" />
                       Send Message
                     </button>
                   </form>
@@ -293,9 +293,9 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Info Sidebar */}
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {/* Contact Cards */}
-              <div className="bg-white rounded-3xl shadow-xl shadow-slate-200/50 p-8 border border-slate-100">
+              <div className="bg-white rounded-3xl shadow-xl shadow-slate-200/50 p-4 sm:p-6 border border-slate-100 overflow-hidden">
                 <h3 className="text-xl font-bold text-slate-900 mb-6">Get in Touch</h3>
                 
                 <div className="space-y-6">
@@ -385,7 +385,7 @@ export default function ContactPage() {
               </div>
 
               {/* Quick Response Badge */}
-              <div className="bg-gradient-to-br from-sky-600 to-sky-700 rounded-3xl p-8 text-white shadow-xl shadow-sky-500/30">
+              <div className="bg-gradient-to-br from-sky-600 to-sky-700 rounded-3xl p-4 sm:p-6 text-white shadow-xl shadow-sky-500/30 overflow-hidden">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">

@@ -3,13 +3,13 @@ export const BUSINESS_INFO = {
   registeredName: "CHITRANSH AGENCY",
   owner: "HARI OM BHATNAGAR",
   ownerRole: "OWNER",
-  tagline: "CUSTOMER SETISFECTION IS OUR MOTO",
+  tagline: "Your Trusted Partner for Pure Water Solutions",
   primaryEmail: "CHITRANSHAGENCY21@GMAIL.COM",
   contactEmail: "HARIOMBHATNAGAR70@GMAIL.COM",
   phones: {
-    business: ["9300010566", "9425043613"],
+    business: ["9300010566", "07554297797"],
     support: "0755-4297797",
-    whatsapp: "07554297797", // Format for WhatsApp link (without dashes)
+    whatsapp: "9425043613", // WhatsApp number
   },
   address: {
     street: "49 LALA LAJPAT RAI COLONY RAISEN ROAD",
@@ -27,6 +27,7 @@ export const BUSINESS_INFO = {
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
   { label: "Products", href: "/products" },
   { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/contact" },

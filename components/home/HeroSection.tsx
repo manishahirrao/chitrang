@@ -48,13 +48,13 @@ export default function HeroSection() {
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-900/50 to-transparent"></div>
         
-        <div className="relative max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-20 flex flex-col lg:flex-row items-center gap-10 text-white z-10">
-          <div className="flex-1">
-            <p className="text-xs uppercase tracking-[0.4em] mb-4 text-sky-200 font-light">Chitransh Agency</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 flex flex-col lg:flex-row items-center gap-8 lg:gap-10 text-white z-10 min-h-[60vh] lg:min-h-[70vh]">
+          <div className="flex-1 text-center lg:text-left">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-3 sm:mb-4 text-sky-200 font-light">Chitransh Agency</p>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 sm:mb-6">
               Pure Water for a <span className="text-sky-300">Healthy Bhopal</span>
             </h1>
-            <p className="text-base md:text-lg text-sky-100 max-w-2xl mb-8 leading-relaxed font-light">
+            <p className="text-sm sm:text-base md:text-lg text-sky-100 max-w-2xl mb-6 sm:mb-8 leading-relaxed font-light">
               Promoting enhanced healthcare & safe water across Bhopal under the trusted banner of
               Chitransh Agency. We offer pure RO solutions across all sectors.
             </p>

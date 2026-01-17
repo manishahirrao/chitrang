@@ -4,23 +4,19 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { BUSINESS_INFO } from '@/lib/constants';
 
 export default function WhatsAppButton() {
-  const whatsappUrl = `https://wa.me/${BUSINESS_INFO.phones.whatsapp}`;
+  const primaryPhone = '9425043613'; // Direct to this number
 
   return (
     <a
-      href={whatsappUrl}
+      href={`https://wa.me/${primaryPhone.replace(/\D/g, '')}`}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-40 group"
       aria-label="Contact us on WhatsApp"
     >
-      {/* Outer glow effect */}
-      <div className="absolute inset-0 bg-green-400/20 rounded-full animate-pulse-slow scale-150 group-hover:scale-175 transition-transform duration-300"></div>
       
       {/* Main button */}
       <div className="relative bg-green-500 text-white p-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-110 animate-float border-2 border-green-400">
-        {/* Water shimmer effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 rounded-full"></div>
         
         {/* WhatsApp icon */}
         <FaWhatsapp className="relative w-8 h-8 transform group-hover:rotate-12 transition-transform duration-300" />
