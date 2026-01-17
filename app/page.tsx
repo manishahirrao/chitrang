@@ -376,6 +376,49 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Certifications Section */}
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] sm:tracking-[0.4em] text-sky-500 mb-2 sm:mb-3 font-light">Our Credentials</p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-3 sm:mb-4">Certifications & Accreditations</h2>
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-3xl mx-auto px-4">
+              Our commitment to quality and service is backed by industry-recognized certifications
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="bg-white rounded-xl shadow-sm border border-sky-100 p-4 hover:shadow-md transition-shadow duration-300">
+              <div className="aspect-[4/3] relative mb-4 rounded-lg overflow-hidden">
+                <Image
+                  src="/images/livpure-certificate.jpeg"
+                  alt="Livpure Certificate"
+                  fill
+                  className="object-contain p-2"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+              <h3 className="text-center font-medium text-slate-800">Livpure Water Purifiers</h3>
+              <p className="text-sm text-center text-slate-500 mt-1">Authorized Dealer</p>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-sm border border-sky-100 p-4 hover:shadow-md transition-shadow duration-300">
+              <div className="aspect-[4/3] relative mb-4 rounded-lg overflow-hidden">
+                <Image
+                  src="/images/zerob-certificate.jpeg"
+                  alt="Zerob Certificate"
+                  fill
+                  className="object-contain p-2"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+              <h3 className="text-center font-medium text-slate-800">Erobe Hydrolife</h3>
+              <p className="text-sm text-center text-slate-500 mt-1">Authorized Sales Consultant</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
