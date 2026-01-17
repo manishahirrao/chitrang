@@ -16,6 +16,45 @@ export default function Home() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [showQuoteModal, setShowQuoteModal] = useState(false);
 
+  const [currentBrandIndex, setCurrentBrandIndex] = useState(0);
+  const brands = [
+    {
+      name: "KENT",
+      logo: "/images/KENT.webp",
+      description: "Advanced RO Systems"
+    },
+    {
+      name: "Aquaguard",
+      logo: "/images/Aquaguard.jpeg",
+      description: "Advanced Water Purification"
+    },
+    {
+      name: "Aquagrand",
+      logo: "/images/Aquagrand.jpeg",
+      description: "Advanced Water Purification"
+    },
+    {
+      name: "Dulevo",
+      logo: "/images/Dulevo.png",
+      description: "Heavy Duty Vacuum Cleaners"
+    },
+    {
+      name: "Eureka Forbes",
+      logo: "/images/Eureka Forbes.png",
+      description: "Advanced Water Purification"
+    }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBrandIndex((prev) => (prev + 1) % brands.length);
+    }, 3000); // Rotate every 3 seconds
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [brands.length]);
+
   const testimonials = [
     {
       name: "Rajesh Kumar",
@@ -235,8 +274,9 @@ export default function Home() {
                   alt="RO Water Purifiers"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent"></div>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-slate-900 mb-3">RO Water Purifiers</h3>
@@ -255,8 +295,9 @@ export default function Home() {
                   alt="Vacuum Cleaners"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent"></div>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-slate-900 mb-3">Vacuum Cleaners</h3>
@@ -275,8 +316,9 @@ export default function Home() {
                   alt="Water Softeners"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent"></div>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-slate-900 mb-3">Water Softeners</h3>
@@ -294,6 +336,42 @@ export default function Home() {
                 View All Products
               </Button>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Trusted Brands Section */}
+      <section className="py-12 sm:py-16 bg-sky-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] sm:tracking-[0.4em] text-sky-500 mb-2 sm:mb-3 font-light">Our Partners</p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-3 sm:mb-4">Trusted Brands We Work With</h2>
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-3xl mx-auto px-4">
+              We partner with leading brands to bring you the best in water purification and cleaning solutions
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 px-4">
+            {brands.map((brand, index) => (
+              <div 
+                key={brand.name}
+                className={`bg-white p-4 rounded-xl shadow-sm border border-sky-100 transition-all duration-300 ${
+                  index === currentBrandIndex ? 'ring-2 ring-sky-500 scale-105' : 'opacity-70 hover:opacity-100'
+                }`}
+              >
+                <div className="h-28 flex items-center justify-center mb-3">
+                  <Image
+                    src={brand.logo}
+                    alt={brand.name}
+                    width={120}
+                    height={80}
+                    className="h-auto max-h-full w-auto max-w-full object-contain"
+                  />
+                </div>
+                <h3 className="text-center font-medium text-slate-800">{brand.name}</h3>
+                <p className="text-xs text-center text-slate-500 mt-1">{brand.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
