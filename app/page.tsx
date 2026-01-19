@@ -356,11 +356,11 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex justify-center items-center gap-3 px-4">
+          <div className="flex flex-wrap justify-center items-center gap-3 px-4">
             {brands.map((brand, index) => (
               <div 
                 key={brand.name}
-                className={`bg-white p-2 rounded-xl shadow-sm border border-sky-100 transition-all duration-300 flex-shrink-0 w-28 ${
+                className={`bg-white p-2 rounded-xl shadow-sm border border-sky-100 transition-all duration-300 flex-shrink-0 w-28 sm:w-32 ${
                   index === currentBrandIndex ? 'ring-2 ring-sky-500 scale-105' : 'opacity-70 hover:opacity-100'
                 }`}
               >
