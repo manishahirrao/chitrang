@@ -21,14 +21,52 @@ export default function GalleryPage() {
   const [showQuoteModal, setShowQuoteModal] = useState(false);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
+  const testimonials = [
+    {
+      name: 'RBI',
+      role: 'Regional Office, Bhopal',
+      initial: 'RBI',
+      content:
+        'Reliable installation and prompt service support. The team maintained excellent hygiene standards and ensured consistent water quality.',
+    },
+    {
+      name: 'Railway',
+      role: 'Division Office, Bhopal',
+      initial: 'RW',
+      content:
+        'Professional team and smooth execution. Their after-sales support is responsive and dependable.',
+    },
+    {
+      name: 'Sagar Public School',
+      role: 'Educational Institution, Bhopal',
+      initial: 'S',
+      content:
+        'The installation was completed on time and the maintenance support has been excellent. Students and staff now have access to safe drinking water.',
+    },
+    {
+      name: 'Narayana School',
+      role: 'Educational Institution, Bhopal',
+      initial: 'N',
+      content:
+        'Great service quality and quick resolution whenever support is needed. Overall a very smooth experience.',
+    },
+    {
+      name: 'AU Bank',
+      role: 'Corporate Office, Bhopal',
+      initial: 'AU',
+      content:
+        'Consistent service and professional installation. We appreciate timely follow-ups and dependable support.',
+    },
+  ];
+
   // Auto-rotate testimonials
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % 3);
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
     }, 5000); // Change testimonial every 5 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [testimonials.length]);
 
   const filteredImages =
     selectedCategory === 'all'
@@ -39,27 +77,6 @@ export default function GalleryPage() {
     src: img.src,
     alt: img.alt,
   }));
-
-  const testimonials = [
-    {
-      name: 'Rajesh Kumar',
-      role: 'Homeowner, Bhopal',
-      initial: 'R',
-      content: 'Excellent service from Chitransh Agency! The RO water purifier installation was done professionally and the water quality is amazing. Highly recommend!'
-    },
-    {
-      name: 'Anita Sharma',
-      role: 'School Principal, Bhopal',
-      initial: 'A',
-      content: 'We installed a commercial RO plant for our school. The team was very professional and the installation was completed on time. Students now have access to pure drinking water.'
-    },
-    {
-      name: 'Mahesh Patel',
-      role: 'Restaurant Owner',
-      initial: 'M',
-      content: 'Great water softener solution for our restaurant. Hard water issues are completely resolved. The maintenance service is also very reliable. Thank you team!'
-    }
-  ];
 
   return (
     <div>

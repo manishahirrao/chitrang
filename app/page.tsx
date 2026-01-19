@@ -62,39 +62,39 @@ export default function Home() {
 
   const testimonials = [
     {
-      name: "Rajesh Kumar",
-      position: "Operations Manager, Textile Industry",
-      content: "The water softener system has transformed our operations. Water quality has improved significantly, and we've seen a 40% reduction in maintenance costs.",
+      name: "RBI",
+      position: "Regional Office, Bhopal",
+      content: "Reliable installation and prompt service support. The team maintained excellent hygiene standards and ensured consistent water quality.",
       rating: 5,
-      initial: "R"
+      initial: "RBI"
     },
     {
-      name: "Priya Sharma",
-      position: "CEO, Healthcare Facility",
-      content: "Exceptional service and quality products. The RO system installation was smooth, and the water quality meets all our medical standards. Highly recommended!",
+      name: "Railway",
+      position: "Division Office, Bhopal",
+      content: "Professional team and smooth execution. Their after-sales support is responsive and dependable.",
       rating: 5,
-      initial: "P"
+      initial: "RW"
     },
     {
-      name: "Amit Verma",
-      position: "Plant Manager, Manufacturing Unit",
-      content: "Chitransh Agency has been our trusted partner for 15+ years. Their prompt service and reliable products keep our operations running smoothly.",
-      rating: 5,
-      initial: "A"
-    },
-    {
-      name: "Sneha Patel",
-      position: "Director, Educational Institute",
-      content: "The vacuum cleaners and water purifiers have made a huge difference in our facility. Students and staff both appreciate the clean environment.",
+      name: "Sagar Public School",
+      position: "Educational Institution, Bhopal",
+      content: "The installation was completed on time and the maintenance support has been excellent. Students and staff now have access to safe drinking water.",
       rating: 5,
       initial: "S"
     },
     {
-      name: "Vikram Singh",
-      position: "Owner, Restaurant Chain",
-      content: "Perfect water quality is crucial for our business. Chitransh Agency delivered exactly what we needed with excellent after-sales support.",
+      name: "Narayana School",
+      position: "Educational Institution, Bhopal",
+      content: "Great service quality and quick resolution whenever support is needed. Overall a very smooth experience.",
       rating: 5,
-      initial: "V"
+      initial: "N"
+    },
+    {
+      name: "AU Bank",
+      position: "Corporate Office, Bhopal",
+      content: "Consistent service and professional installation. We appreciate the timely follow-ups and dependable support.",
+      rating: 5,
+      initial: "AU"
     }
   ];
 
