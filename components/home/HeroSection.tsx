@@ -77,8 +77,8 @@ export default function HeroSection() {
           <div className="flex-1 max-w-md w-full">
             <div className="bg-sky-900/40 rounded-2xl overflow-hidden shadow-2xl border border-sky-700/70">
               <img 
-                src="/images/home-side.jpg" 
-                alt="Water Treatment Solutions" 
+                src="/images/products/water-softening-systems.webp" 
+                alt="Water Softening Systems" 
                 className="w-full h-auto object-cover"
               />
             </div>

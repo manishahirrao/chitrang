@@ -29,8 +29,13 @@ export default function Home() {
       description: "Advanced Water Purification"
     },
     {
-      name: "Aquagrand",
-      logo: "/images/Aquagrand.jpeg",
+      name: "Livpure",
+      logo: "/images/livepure-logo.jpeg",
+      description: "Advanced Water Purification"
+    },
+    {
+      name: "Zerob",
+      logo: "/images/zerob-logo.png",
       description: "Advanced Water Purification"
     },
     {
@@ -128,9 +133,9 @@ export default function Home() {
               </p>
               <div className="grid sm:grid-cols-2 gap-4 mb-6">
                 <div className="bg-white rounded-2xl border border-sky-100 p-5 shadow-sm">
-                  <p className="text-sm text-slate-500 mb-1">Since</p>
-                  <p className="text-lg font-semibold text-slate-900">2003</p>
-                  <p className="text-sm text-slate-600 mt-2">Serving homes, offices, and institutions in and around Bhopal.</p>
+                  <p className="text-sm text-slate-500 mb-1">Experience</p>
+                  <p className="text-lg font-semibold text-slate-900">30+ Years</p>
+                  <p className="text-sm text-slate-600 mt-2">Serving homes, offices, and institutions in and around Bhopal over 30 years.</p>
                 </div>
                 <div className="bg-white rounded-2xl border border-sky-100 p-5 shadow-sm">
                   <p className="text-sm text-slate-500 mb-1">Support</p>
@@ -351,25 +356,25 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 px-4">
+          <div className="flex justify-center items-center gap-3 px-4">
             {brands.map((brand, index) => (
               <div 
                 key={brand.name}
-                className={`bg-white p-4 rounded-xl shadow-sm border border-sky-100 transition-all duration-300 ${
+                className={`bg-white p-2 rounded-xl shadow-sm border border-sky-100 transition-all duration-300 flex-shrink-0 w-28 ${
                   index === currentBrandIndex ? 'ring-2 ring-sky-500 scale-105' : 'opacity-70 hover:opacity-100'
                 }`}
               >
-                <div className="h-28 flex items-center justify-center mb-3">
+                <div className="h-14 flex items-center justify-center mb-2">
                   <Image
                     src={brand.logo}
                     alt={brand.name}
-                    width={120}
-                    height={80}
+                    width={80}
+                    height={40}
                     className="h-auto max-h-full w-auto max-w-full object-contain"
                   />
                 </div>
-                <h3 className="text-center font-medium text-slate-800">{brand.name}</h3>
-                <p className="text-xs text-center text-slate-500 mt-1">{brand.description}</p>
+                <h3 className="text-center font-medium text-slate-800 text-xs">{brand.name}</h3>
+                <p className="text-xs text-center text-slate-500 mt-1 leading-tight hidden sm:block">{brand.description}</p>
               </div>
             ))}
           </div>
@@ -412,7 +417,7 @@ export default function Home() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
-              <h3 className="text-center font-medium text-slate-800">Erobe Hydrolife</h3>
+              <h3 className="text-center font-medium text-slate-800">ZEROB Hydrolife</h3>
               <p className="text-sm text-center text-slate-500 mt-1">Authorized Sales Consultant</p>
             </div>
           </div>
@@ -505,7 +510,7 @@ export default function Home() {
             {[
               {
                 question: "What types of water purifiers do you offer?",
-                answer: "We offer a comprehensive range of RO water purifiers including domestic systems (Kent, LG, Aqua Guard), commercial purifiers (100 LPH to 50,000 LPH), and industrial RO plants. All systems feature multi-stage purification with UV, UF, and mineral addition technology."
+                answer: "We offer a comprehensive range of RO water purifiers including domestic systems (Kent, LG, Aqua Guard), commercial purifiers (50 LPH to 50,000 LPH), and industrial RO plants. All systems feature multi-stage purification with UV, UF, and mineral addition technology."
               },
               {
                 question: "Do you provide installation services in Bhopal?",
@@ -529,7 +534,7 @@ export default function Home() {
               },
               {
                 question: "How do I contact customer support?",
-                answer: `Reach us via phone at ${BUSINESS_INFO.phones.business[0]}, WhatsApp at ${BUSINESS_INFO.phones.support}, or email at ${BUSINESS_INFO.primaryEmail}. Our office is open Monday-Saturday, 9 AM - 7 PM. Emergency support is available 24/7 for AMC customers.`
+                answer: `Reach us via phone at ${BUSINESS_INFO.phones.business[0]}, WhatsApp at ${BUSINESS_INFO.phones.whatsapp}, or email at ${BUSINESS_INFO.primaryEmail}. Our office is open Monday-Saturday, 9 AM - 7 PM. Emergency support is available 24/7 for AMC customers.`
               },
               {
                 question: "Do you have a physical showroom?",
@@ -537,7 +542,7 @@ export default function Home() {
               },
               {
                 question: "What warranties do you provide?",
-                answer: "All products come with manufacturer warranty (1-3 years depending on model). We also provide service warranty on installation work. Extended warranty options are available for additional peace of mind."
+                answer: "All products come with manufacturer warranty (1-4 years depending on model). We also provide service warranty on installation work. Extended warranty options are available for additional peace of mind."
               },
               {
                 question: "Can I get a free water test?",

@@ -6,7 +6,7 @@ import { HiCheckCircle } from 'react-icons/hi';
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: `Learn about ${BUSINESS_INFO.name} - ${BUSINESS_INFO.tagline}. Leading provider of RO Water Purifiers and Vacuum Cleaners in Bhopal since 2003.`,
+  description: `Learn about ${BUSINESS_INFO.name} - ${BUSINESS_INFO.tagline}. Leading provider of RO Water Purifiers and Vacuum Cleaners in Bhopal for over 30 years.`,
 };
 
 export default function AboutPage() {
@@ -30,10 +30,10 @@ export default function AboutPage() {
           <div className="flex-1 text-center lg:text-left">
             <p className="text-xs sm:text-sm uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-3 sm:mb-4 text-sky-200 font-light">About Us</p>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 sm:mb-6">
-              Trusted <span className="text-sky-300">Water Solutions</span> Since 2003
+              Trusted <span className="text-sky-300">Water Solutions</span> for Over 30 Years
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-sky-100 max-w-2xl mb-6 sm:mb-8 leading-relaxed font-light">
-              Established in 2003, Chitransh Agency has been serving the people of Bhopal with premium quality water purification systems and home cleaning solutions. We are your trusted partner for pure water and healthy living.
+              Chitransh Agency has been serving the people of Bhopal with premium quality water purification systems and home cleaning solutions. We are your trusted partner for pure water and healthy living.
             </p>
             <div className="flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
               <Link href="/contact">
@@ -50,13 +50,77 @@ export default function AboutPage() {
           </div>
           
           {/* Side Image */}
-          <div className="flex-1 max-w-md w-full">
+          <div className="flex-1 max-w-sm w-full">
             <div className="bg-sky-900/40 rounded-2xl overflow-hidden shadow-2xl border border-sky-700/70">
               <img 
-                src="/images/home-hero1.jpg" 
-                alt="About Chitransh Agency" 
+                src="/images/products/aquagrand-ro-water-purifier.webp" 
+                alt="Aquagrand RO Water Purifier" 
                 className="w-full h-auto object-cover"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Journey Section */}
+      <section className="py-16 bg-sky-50">
+        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] sm:tracking-[0.4em] text-sky-500 mb-3 font-light">Our Journey</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Building Excellence Together</h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Decades of excellence in water purification and cleaning solutions
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">The Beginning</h3>
+                  <p className="text-slate-600 leading-relaxed mb-4">
+                    With a vision to provide Bhopal with access to pure, safe drinking water, {BUSINESS_INFO.owner} founded Chitransh Agency. What started as a small proprietorship has grown into one of Central India's most trusted names in water treatment solutions.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">Growth & Expansion</h3>
+                  <p className="text-slate-600 leading-relaxed mb-4">
+                    From humble beginnings serving residential customers, we expanded our horizons to include commercial and industrial water treatment solutions. Today, we proudly serve thousands of homes, offices, restaurants, hospitals, and industrial units across Bhopal and surrounding areas.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">Our Commitment</h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    Over the years, our commitment to quality has never wavered. We've built lasting relationships with leading manufacturers, invested in continuous training, and maintained our focus on customer satisfaction. Every installation, every service call, and every customer interaction reflects our dedication to excellence.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="order-1 lg:order-2">
+              <div className="relative">
+                <div className="bg-white rounded-3xl shadow-2xl p-8 border border-sky-200">
+                  <div className="aspect-[4/5] relative mb-6 rounded-2xl overflow-hidden bg-slate-100">
+                    <Image
+                      src="/images/founder.jpeg"
+                      alt={BUSINESS_INFO.owner}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      priority
+                    />
+                  </div>
+                  <div className="text-center">
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">{BUSINESS_INFO.owner}</h3>
+                    <p className="text-sky-600 font-semibold mb-2">{BUSINESS_INFO.ownerRole}</p>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      Founder of Chitransh Agency, bringing over 30 years of expertise in water purification and cleaning solutions to serve the community with dedication and trust.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

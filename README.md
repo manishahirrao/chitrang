@@ -104,9 +104,9 @@ website/
 
 ## 📱 Contact Information
 
-- **Business:** 9300010566, 9425043613
+- **Business:** 9300010566, 07554297797
 - **Support:** 0755-4297797
-- **Email:** CHITRANSHAGENCY21@GMAIL.COM
+- **Email:** chitranshagency21@gmail.com
 - **Address:** 49 Lala Lajpat Rai Colony Raisen Road, Bhopal, 462023
 - **Hours:** 9:00 AM TO 9:00PM
 

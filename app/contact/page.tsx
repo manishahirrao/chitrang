@@ -336,22 +336,37 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  {/* Address */}
+                  {/* Head Office */}
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-emerald-500/30">
                       <IconMapPin className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-slate-900 mb-2">Address</h4>
+                      <h4 className="font-semibold text-slate-900 mb-2">Head Office</h4>
                       <address className="text-slate-600 text-sm leading-relaxed not-italic">
-                        {BUSINESS_INFO.address.street}<br />
-                        {BUSINESS_INFO.address.city}, {BUSINESS_INFO.address.state}<br />
-                        {BUSINESS_INFO.address.pinCode}
+                        49 LALA LAJPAT RAI COLONY RAISEN ROAD<br />
+                        BHOPAL, Madhya Pradesh<br />
+                        462023
                       </address>
                     </div>
                   </div>
 
-                  {/* Hours */}
+                  {/* Branch Office */}
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-purple-500/30">
+                      <IconMapPin className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-slate-900 mb-2">Branch Office</h4>
+                      <address className="text-slate-600 text-sm leading-relaxed not-italic">
+                        163, Narayan Nagar<br />
+                        naradapuram Road<br />
+                        Bhopal 462026
+                      </address>
+                    </div>
+                  </div>
+
+                  {/* Business Hours */}
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-amber-500/30">
                       <IconClock className="w-6 h-6 text-white" />
@@ -359,7 +374,8 @@ export default function ContactPage() {
                     <div className="flex-1">
                       <h4 className="font-semibold text-slate-900 mb-2">Business Hours</h4>
                       <div className="text-slate-600 text-sm space-y-1">
-                        <p className="font-medium text-slate-900">{BUSINESS_INFO.workingHours}</p>
+                        <p className="font-medium text-slate-900">Monday to Sunday</p>
+                        <p>9:00 AM - 9:00 PM</p>
                       </div>
                     </div>
                   </div>
@@ -372,7 +388,7 @@ export default function ContactPage() {
                     <div className="flex-1">
                       <h4 className="font-semibold text-slate-900 mb-2">WhatsApp</h4>
                       <a
-                        href={`https://wa.me/${BUSINESS_INFO.phones.whatsapp}`}
+                        href={`https://wa.me/91${BUSINESS_INFO.phones.whatsapp.replace(/\D/g, '')}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-emerald-600 hover:text-emerald-700 font-medium transition-colors text-sm"

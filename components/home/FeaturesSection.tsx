@@ -3,9 +3,9 @@ import { HiCheckCircle, HiShieldCheck, HiClock, HiSupport, HiStar, HiUsers, HiTr
 const features = [
   {
     icon: HiStar,
-    title: '20+ Years Experience',
-    description: 'Serving Bhopal since 2003 with trusted water purification solutions',
-    stat: '20+',
+    title: '30+ Years Experience',
+    description: 'Serving Bhopal for over 30 years with trusted water purification solutions',
+    stat: '30+',
     statLabel: 'Years in Business'
   },
   
@@ -48,7 +48,7 @@ export default function FeaturesSection() {
         <div className="text-center mb-12 sm:mb-16">
           <p className="text-xs sm:text-sm uppercase tracking-[0.3em] sm:tracking-[0.4em] text-sky-500 mb-3 sm:mb-4 font-light">Why Choose Us</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
-            Trusted by <span className="text-sky-600">Bhopal</span> for 20+ Years
+            Trusted by <span className="text-sky-600">Bhopal</span> for 30+ Years
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             We combine decades of expertise with premium products to deliver the best water purification and cleaning solutions for your home and business

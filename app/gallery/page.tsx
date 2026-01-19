@@ -90,15 +90,15 @@ export default function GalleryPage() {
             {/* Stats */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6 sm:mb-8">
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">500+</div>
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">2000+</div>
                 <div className="text-xs sm:text-sm text-sky-200">Projects Completed</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">15+</div>
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">30+</div>
                 <div className="text-xs sm:text-sm text-sky-200">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">98%</div>
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">99%</div>
                 <div className="text-xs sm:text-sm text-sky-200">Customer Satisfaction</div>
               </div>
               <div className="text-center">
@@ -126,8 +126,8 @@ export default function GalleryPage() {
           <div className="flex-1 max-w-md w-full">
             <div className="bg-sky-900/40 rounded-2xl overflow-hidden shadow-2xl border border-sky-700/70">
               <img 
-                src="/images/home-hero2.jpg" 
-                alt="Gallery Showcase" 
+                src="/images/gallery/Our Bhopal Showroom.jpeg" 
+                alt="Our Bhopal Showroom" 
                 className="w-full h-auto object-cover"
               />
             </div>
@@ -285,11 +285,11 @@ export default function GalleryPage() {
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
-                <div className="text-2xl font-bold mb-1">500+</div>
+                <div className="text-2xl font-bold mb-1">5000+</div>
                 <div className="text-sm text-sky-200">Happy Customers</div>
               </div>
               <div>
-                <div className="text-2xl font-bold mb-1">15+</div>
+                <div className="text-2xl font-bold mb-1">30+</div>
                 <div className="text-sm text-sky-200">Years Experience</div>
               </div>
               <div>
@@ -297,7 +297,7 @@ export default function GalleryPage() {
                 <div className="text-sm text-sky-200">Support</div>
               </div>
               <div>
-                <div className="text-2xl font-bold mb-1">100%</div>
+                <div className="text-2xl font-bold mb-1">99%</div>
                 <div className="text-sm text-sky-200">Satisfaction</div>
               </div>
             </div>

@@ -4,11 +4,12 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { BUSINESS_INFO } from '@/lib/constants';
 
 export default function WhatsAppButton() {
-  const primaryPhone = '9425043613'; // Direct to this number
+  const primaryPhone = BUSINESS_INFO.phones.whatsapp; // Using the number from constants
+  const whatsappNumber = primaryPhone.replace(/\D/g, '');
 
   return (
     <a
-      href={`https://wa.me/${primaryPhone.replace(/\D/g, '')}`}
+      href={`https://wa.me/91${whatsappNumber}`}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-40 group"

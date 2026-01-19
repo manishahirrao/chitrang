@@ -122,7 +122,7 @@ export default function ServicesPage() {
                     </div>
                     <div className="bg-blue-50 rounded-lg p-3">
                       <p className="text-blue-800 font-semibold text-sm mb-1">Commercial Systems</p>
-                      <p className="text-blue-600 text-xs">100 LPH to 50,000 LPH RO plants</p>
+                      <p className="text-blue-600 text-xs">50 LPH to 50,000 LPH RO plants</p>
                     </div>
                   </div>
                 </div>

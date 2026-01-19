@@ -12,7 +12,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold text-white mb-4">{BUSINESS_INFO.name}</h3>
             <p className="text-sky-100 mb-2">Your Trusted Partner for Pure Water Solutions</p>
-            <p className="text-sm text-sky-200 mb-2">Serving Bhopal with Excellence Since 2003</p>
+            <p className="text-sm text-sky-200 mb-2">Serving Bhopal with Excellence for over 30 Years</p>
             <p className="text-xs text-sky-400 mt-3">GST No. 23BACPB3942D1ZG</p>
           </div>
 
@@ -106,11 +106,22 @@ export default function Footer() {
               <li className="flex items-start space-x-3">
                 <HiLocationMarker className="w-5 h-5 text-sky-200 flex-shrink-0" />
                 <div>
-                  <h5 className="font-semibold text-white mb-1">Visit Us</h5>
+                  <h5 className="font-semibold text-white mb-1">Head Office</h5>
                   <address className="text-sm text-sky-200 not-italic break-words">
-                    {BUSINESS_INFO.address.street}<br />
-                    {BUSINESS_INFO.address.city}, {BUSINESS_INFO.address.state}<br />
-                    {BUSINESS_INFO.address.pinCode}
+                    49 LALA LAJPAT RAI COLONY RAISEN ROAD<br />
+                    BHOPAL, Madhya Pradesh<br />
+                    462023
+                  </address>
+                </div>
+              </li>
+              <li className="flex items-start space-x-3">
+                <HiLocationMarker className="w-5 h-5 text-sky-200 flex-shrink-0" />
+                <div>
+                  <h5 className="font-semibold text-white mb-1">Branch Office</h5>
+                  <address className="text-sm text-sky-200 not-italic break-words">
+                    163, Narayan Nagar<br />
+                    naradapuram Road<br />
+                    Bhopal 462026
                   </address>
                 </div>
               </li>

@@ -52,11 +52,11 @@ export default function ProductsClient() {
           </div>
 
           {/* Side Image */}
-          <div className="flex-1 max-w-md w-full">
+          <div className="flex-1 max-w-xs w-full">
             <div className="bg-sky-900/40 rounded-2xl overflow-hidden shadow-2xl border border-sky-700/70">
               <img
-                src="/images/products/kent-ace-ro-water-purifier.webp"
-                alt="Kent RO Water Purifier"
+                src="/images/products/kent-water-purifiers.webp"
+                alt="Kent RO Water Purifiers"
                 className="w-full h-auto object-cover"
               />
             </div>
@@ -181,7 +181,7 @@ export default function ProductsClient() {
           <div className="text-center">
             <div className="inline-flex flex-col items-center">
               <a
-                href={`https://wa.me/91${BUSINESS_INFO.phones.whatsapp}?text=Hi!%20I%27m%20interested%20in%20your%20products`}
+                href={`https://wa.me/91${BUSINESS_INFO.phones.whatsapp.replace(/\D/g, '')}?text=Hi!%20I%27m%20interested%20in%20your%20products`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-8 py-4 bg-cyan-600 text-white rounded-lg font-medium hover:bg-cyan-700 hover:shadow-xl hover:shadow-cyan-500/25 transform hover:scale-105 transition-all duration-300"
