@@ -7,6 +7,7 @@ import HeroSection from '@/components/home/HeroSection';
 import FeaturesSection from '@/components/home/FeaturesSection';
 import ProductCard from '@/components/ProductCard';
 import QuoteModal from '@/components/QuoteModal';
+import ClientsSection from '@/components/ClientsSection';
 import { products } from '@/data/products';
 import { BUSINESS_INFO } from '@/lib/constants';
 import Button from '@/components/ui/Button';
@@ -34,7 +35,7 @@ export default function Home() {
       description: "Advanced Water Purification"
     },
     {
-      name: "Zerob",
+      name: "Zero B",
       logo: "/images/zerob-logo.png",
       description: "Advanced Water Purification"
     },
@@ -339,6 +340,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Clients Section */}
+      <ClientsSection onOpenQuoteModal={() => setShowQuoteModal(true)} />
 
       {/* Trusted Brands Section */}
       <section className="py-12 sm:py-16 bg-sky-50">
