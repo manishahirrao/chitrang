@@ -7,7 +7,7 @@ export const BUSINESS_INFO = {
   primaryEmail: "chitranshagency21@gmail.com",
   contactEmail: "hariombhatnagar70@gmail.com",
   phones: {
-    business: ["9300010566", "07554297797"],
+    business: ["9300010566", "07554297797", "94250 43613"],
     support: "0755-4297797",
     whatsapp: "9300010566", // WhatsApp number
   },

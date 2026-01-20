@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { NAV_LINKS, BUSINESS_INFO } from '@/lib/constants';
 import QuoteModal from '@/components/QuoteModal';
@@ -143,6 +144,13 @@ export default function Header() {
           <div className="flex items-center justify-between h-16 sm:h-20 gap-3">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2 group min-w-0" onClick={closeMobileMenu}>
+              <Image
+                src="/images/logo.png"
+                alt={`${BUSINESS_INFO.name} Logo`}
+                width={40}
+                height={40}
+                className="w-10 h-10 sm:w-12 sm:h-12"
+              />
               <div className="text-lg sm:text-2xl font-bold text-cyan-600 group-hover:text-cyan-700 transition-all duration-300 transform group-hover:scale-105 truncate">
                 {BUSINESS_INFO.name}
               </div>

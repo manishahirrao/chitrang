@@ -50,175 +50,107 @@ export default function AboutPage() {
           </div>
           
           {/* Side Image */}
-          <div className="flex-1 max-w-sm w-full">
+          <div className="flex-1 max-w-xs w-full">
             <div className="bg-sky-900/40 rounded-2xl overflow-hidden shadow-2xl border border-sky-700/70">
               <img 
-                src="/images/products/aquagrand-ro-water-purifier.webp" 
-                alt="Aquagrand RO Water Purifier" 
+                src="/images/products/aquaguard-ro-water-purifier.webp" 
+                alt="Aquaguard RO Water Purifier" 
                 className="w-full h-auto object-cover"
               />
             </div>
           </div>
         </div>
       </section>
-
-      {/* Our Journey Section */}
-      <section className="py-16 bg-sky-50">
-        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] sm:tracking-[0.4em] text-sky-500 mb-3 font-light">Our Journey</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Building Excellence Together</h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+{/* Our Journey Section */}
+      <section className="py-8 bg-gradient-to-br from-sky-50 via-white to-slate-50 relative overflow-hidden">
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-sky-200/40 rounded-full blur-3xl" />
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl" />
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
+          <div className="mb-6 sm:mb-8 text-center">
+            <div className="inline-flex items-center gap-2 mb-4">
+              <div className="h-px w-8 bg-gradient-to-r from-transparent to-sky-500"></div>
+              <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-sky-600 font-semibold">Our Journey</p>
+              <div className="h-px w-8 bg-gradient-to-l from-transparent to-sky-500"></div>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
+              Building Excellence Together
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Decades of excellence in water purification and cleaning solutions
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="order-1 lg:order-1">
-              <div className="relative group">
-                {/* Decorative background elements */}
-                <div className="absolute -inset-4 bg-gradient-to-br from-sky-100 via-blue-50 to-indigo-100 rounded-3xl opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
-                
-                {/* Main card with enhanced styling */}
-                <div className="relative bg-white rounded-3xl shadow-2xl p-8 border border-sky-200 transform transition-all duration-300 hover:scale-105 hover:shadow-3xl">
-                  {/* Founder image with modern frame and effects */}
-                  <div className="relative mb-6">
-                    {/* Gradient overlay frame */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-sky-400/20 via-blue-500/10 to-indigo-600/20 rounded-2xl"></div>
-                    
-                    {/* Image container with aspect ratio and effects */}
-                    <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-inner">
-                      <Image
-                        src="/images/founder.jpeg"
-                        alt={BUSINESS_INFO.owner}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        sizes="(max-width: 1024px) 100vw, 50vw"
-                        priority
-                      />
-                      
-                      {/* Subtle gradient overlay for depth */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-30"></div>
-                    </div>
-                    
-                    {/* Decorative corner elements */}
-                    <div className="absolute top-2 left-2 w-8 h-8 border-t-2 border-l-2 border-sky-400/50 rounded-tl-lg"></div>
-                    <div className="absolute top-2 right-2 w-8 h-8 border-t-2 border-r-2 border-sky-400/50 rounded-tr-lg"></div>
-                    <div className="absolute bottom-2 left-2 w-8 h-8 border-b-2 border-l-2 border-sky-400/50 rounded-bl-lg"></div>
-                    <div className="absolute bottom-2 right-2 w-8 h-8 border-b-2 border-r-2 border-sky-400/50 rounded-br-lg"></div>
-                  </div>
-                  
-                  {/* Enhanced text section with better typography */}
-                  <div className="text-center space-y-3">
-                    {/* Name with enhanced styling */}
-                    <h3 className="text-2xl font-bold text-slate-900 bg-gradient-to-r from-slate-900 to-sky-700 bg-clip-text text-transparent">
-                      {BUSINESS_INFO.owner}
-                    </h3>
-                    
-                    {/* Role with badge styling */}
-                    <div className="inline-flex items-center">
-                      <span className="bg-gradient-to-r from-sky-500 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                        {BUSINESS_INFO.ownerRole}
-                      </span>
-                    </div>
-                    
-                    {/* Enhanced description with better spacing */}
-                    <p className="text-slate-600 leading-relaxed text-sm md:text-base px-2">
-                      Founder of Chitransh Agency, bringing over 30 years of expertise in water purification and cleaning solutions to serve the community with dedication and trust.
-                    </p>
-                    
-                    {/* Decorative elements */}
-                    <div className="flex justify-center items-center space-x-2 pt-2">
-                      <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-sky-400"></div>
-                      <div className="w-2 h-2 bg-sky-500 rounded-full"></div>
-                      <div className="w-12 h-0.5 bg-gradient-to-l from-transparent to-sky-400"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div className="bg-white/80 backdrop-blur rounded-2xl border border-sky-100 shadow-lg shadow-sky-900/5 p-4 sm:p-6 after:content-[''] after:block after:clear-both">
+            {/* Founder Image */}
+            <div className="relative mb-4 h-80 w-60 overflow-hidden rounded-xl shadow-lg ring-1 ring-sky-200/60 sm:float-right sm:mb-3 sm:ml-6 lg:h-96 lg:w-72 z-10">
+              <Image
+                src="/images/founder.jpeg"
+                alt={BUSINESS_INFO.owner}
+                fill
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                sizes="(max-width: 640px) 240px, 288px"
+                priority
+              />
             </div>
 
-            <div className="order-2 lg:order-2">
-              <div className="bg-white rounded-3xl shadow-xl border border-sky-100 p-6 sm:p-8">
-                <div className="mb-5">
-                  <h3 className="text-2xl md:text-3xl font-bold text-slate-900">Biography of Mr. Hari Om Bhatnagar</h3>
-                  <p className="text-slate-600 mt-2">Director – Chitransh Agency</p>
-                </div>
+            {/* Left Column - Text Content */}
+            <div className="space-y-6">
+              {/* Name and Title */}
+              <div className="border-b border-slate-200/70 pb-4 ">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 mb-2">
+                  {BUSINESS_INFO.owner}
+                </h3>
+                <p className="text-base sm:text-lg text-slate-600 font-semibold">{BUSINESS_INFO.ownerRole}</p>
+              </div>
 
-                <div className="space-y-4 text-slate-700 leading-relaxed">
-                  <p>
-                    Mr. Hari Om Bhatnagar is a seasoned professional with extensive experience in the water purification and home appliances industry, spanning more than two decades. His journey reflects dedication, leadership, and a strong commitment to customer service.
-                  </p>
-                  <p>
-                    He began his professional career on 10 May 1996 with Eureka Forbes, working in the Water Purifier Division. Through consistent performance and hands-on field experience, he contributed significantly to the organization until 31 March 2003.
-                  </p>
-                  <p>
-                    With a vision to build his own enterprise, Mr. Bhatnagar established Chitransh Agency on 1 April 2003. Operating from Hoshangabad District, the agency managed direct operations and successfully handled the franchise of water purifiers and vacuum cleaners. Under his leadership, Chitransh Agency grew steadily and built a strong reputation in the region from 1 April 2003 to 31 March 2008.
-                  </p>
-                  <p>
-                    In April 2008, Mr. Bhatnagar expanded his professional role by moving to Bhopal, where he joined the AquaSure Division as a Territory Head. In this leadership position, he was responsible for managing operations, sales growth, and regional development, serving with dedication until 1 November 2010.
-                  </p>
-                  <p>
-                    Driven by entrepreneurial spirit and customer-centric values, Mr. Hari Om Bhatnagar re-established Chitransh Agency on 1 November 2010. Since then, the agency has been continuously serving customers with honesty, quality products, and reliable service.
-                  </p>
-                  <p>
-                    Today, Chitransh Agency, under the guidance of Mr. Hari Om Bhatnagar, stands as a trusted name in the industry, committed to delivering excellence and customer satisfaction. His journey is a testament to perseverance, industry expertise, and unwavering dedication to serve.
-                  </p>
-                </div>
+              {/* Introduction */}
+              <div className="space-y-3 text-slate-700 leading-relaxed">
+                <p className="text-sm sm:text-base">
+                  Founder of Chitransh Agency, bringing over 30 years of expertise in water purification and cleaning solutions to serve the community with dedication and trust.
+                </p>
+              </div>
+
+              {/* Biography Title */}
+              <div className="pt-2">
+                <h4 className="text-xl md:text-2xl font-bold text-slate-900 mb-4">
+                  Biography
+                </h4>
+              </div>
+
+              {/* Biography Content */}
+              <div className="space-y-4 text-slate-700 leading-relaxed text-sm sm:text-base">
+                <p>
+                  Hari Om Bhatnagar is a seasoned professional with extensive experience in the water purification and home appliances industry, spanning more than two decades. His journey reflects dedication, leadership, and a strong commitment to customer service.
+                </p>
+                
+                <p>
+                  He began his professional career on 10 May 1996 with Eureka Forbes, working in the Water Purifier Division. Through consistent performance and hands-on field experience, he contributed significantly to the organization until 31 March 2003.
+                </p>
+                
+                <p>
+                  With a vision to build his own enterprise, Mr. Bhatnagar established Chitransh Agency on 1 April 2003. Operating from Hoshangabad District, the agency managed direct operations and successfully handled the franchise of water purifiers and vacuum cleaners. Under his leadership, Chitransh Agency grew steadily and built a strong reputation in the region from 1 April 2003 to 31 March 2008.
+                </p>
+                
+                <p>
+                  In April 2008, Mr. Bhatnagar expanded his professional role by moving to Bhopal, where he joined the AquaSure Division as a Territory Head. In this leadership position, he was responsible for managing operations, sales growth, and regional development, serving with dedication until 30 October 2010.
+                </p>
+                
+                <p>
+                  Driven by entrepreneurial spirit and customer-centric values, Mr. Hari Om Bhatnagar re-established Chitransh Agency on 1 November 2010. Since then, the agency has been continuously serving customers with honesty, quality products, and reliable service.
+                </p>
+                
+                <p className="font-medium text-slate-800">
+                  Today, Chitransh Agency, under the guidance of Mr. Hari Om Bhatnagar, stands as a trusted name in the industry, committed to delivering excellence and customer satisfaction. His journey is a testament to perseverance, industry expertise, and unwavering dedication to serve.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Company Info Section */}
+      {/* What We Do Section */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <p className="text-xs uppercase tracking-[0.4em] text-sky-500 mb-3 font-light">Our Story</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              {BUSINESS_INFO.registeredName}
-            </h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Established in 2003, Chitransh Agency has been serving the people of Bhopal with premium quality water purification systems and home cleaning solutions. We are a proprietorship company acknowledged among the noteworthy manufacturers, traders, retailers, and wholesalers of the best quality commercial water purifiers, water softeners, vacuum cleaners, and related products.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 mb-12">
-            <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Our Mission</h3>
-              <p className="text-sky-600 font-semibold mb-4">
-                "{BUSINESS_INFO.tagline}"
-              </p>
-              <p className="text-slate-600 leading-relaxed">
-                We are committed to providing our customers with the highest quality water purification and home cleaning products, backed by exceptional service and support. Our goal is to ensure every customer has access to clean, safe water and a healthy living environment.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Our Vision</h3>
-              <p className="text-slate-600 leading-relaxed">
-                To be the leading water treatment solutions provider in Central India, known for innovation, quality, and customer satisfaction.
-              </p>
-              <div className="mt-6 bg-sky-50 rounded-2xl p-6 border border-sky-200">
-                <p className="text-sm font-semibold text-slate-900 mb-2">What you can expect</p>
-                <ul className="space-y-2 text-slate-700">
-                  <li className="flex items-start gap-2">
-                    <HiCheckCircle className="w-5 h-5 text-sky-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm leading-relaxed">Honest guidance based on your water quality and daily usage</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <HiCheckCircle className="w-5 h-5 text-sky-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm leading-relaxed">Neat installation and clear product demo for your family or staff</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <HiCheckCircle className="w-5 h-5 text-sky-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm leading-relaxed">Fast support for service, spares, and scheduled maintenance</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
           <div className="grid lg:grid-cols-3 gap-6 mb-12">
             <div className="bg-gradient-to-br from-sky-50 to-white rounded-2xl p-6 border border-sky-200">
               <h3 className="text-xl font-bold text-slate-900 mb-3">What We Do</h3>

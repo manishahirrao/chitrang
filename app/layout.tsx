@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import CatalogueButton from "@/components/CatalogueButton";
 import { BUSINESS_INFO } from "@/lib/constants";
 
 const inter = Inter({
@@ -111,6 +112,7 @@ export default function RootLayout({
         <main className="min-h-screen pt-16 sm:pt-20">{children}</main>
         <Footer />
         <WhatsAppButton />
+        <CatalogueButton />
       </body>
     </html>
   );

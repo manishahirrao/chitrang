@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { HiPhone, HiMail, HiLocationMarker } from 'react-icons/hi';
 import { FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { BUSINESS_INFO, NAV_LINKS } from '@/lib/constants';
@@ -10,7 +11,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold text-white mb-4">{BUSINESS_INFO.name}</h3>
+            <div className="flex items-center space-x-3 mb-4">
+              <Image
+                src="/images/logo.png"
+                alt={`${BUSINESS_INFO.name} Logo`}
+                width={60}
+                height={60}
+                className="w-12 h-12 sm:w-14 sm:h-14"
+              />
+              <h3 className="text-xl font-bold text-white">{BUSINESS_INFO.name}</h3>
+            </div>
             <p className="text-sky-100 mb-2">Your Trusted Partner for Pure Water Solutions</p>
             <p className="text-sm text-sky-200 mb-2">Serving Bhopal with Excellence for over 30 Years</p>
             <p className="text-xs text-sky-400 mt-3">GST No. 23BACPB3942D1ZG</p>
@@ -72,7 +82,7 @@ export default function Footer() {
                 <HiPhone className="w-5 h-5 text-sky-200 flex-shrink-0 mt-1" />
                 <div>
                   <h5 className="font-semibold text-white mb-2">Call Us</h5>
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+                  <div className="flex flex-col gap-2">
                     {BUSINESS_INFO.phones.business.map((phone, index) => (
                       <div key={index} className="flex items-center">
                         <a
@@ -81,9 +91,6 @@ export default function Footer() {
                         >
                           {phone}
                         </a>
-                        {index < BUSINESS_INFO.phones.business.length - 1 && (
-                          <span className="text-sky-400 mx-1 hidden sm:inline">|</span>
-                        )}
                       </div>
                     ))}
                   </div>

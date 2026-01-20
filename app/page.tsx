@@ -25,8 +25,8 @@ export default function Home() {
     },
     {
       name: "Aquaguard",
-      logo: "/images/Aquaguard.jpeg",
-      description: "Advanced Water Purification"
+      logo: "/images/Eureka Forbes.png",
+      description: "by Eureka Forbes"
     },
     {
       name: "Livpure",
@@ -42,11 +42,6 @@ export default function Home() {
       name: "Dulevo",
       logo: "/images/Dulevo.png",
       description: "Heavy Duty Vacuum Cleaners"
-    },
-    {
-      name: "Eureka Forbes",
-      logo: "/images/Eureka Forbes.png",
-      description: "Advanced Water Purification"
     }
   ];
 
@@ -271,12 +266,12 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {/* RO Water Purifiers Card */}
+            {/* Commercial Water Purifiers Card */}
             <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-sky-100">
               <div className="relative h-48">
                 <Image
-                  src="/images/products/kent-ace-ro-water-purifier.webp"
-                  alt="RO Water Purifiers"
+                  src="/images/products/commercial-water-purifier.webp"
+                  alt="Commercial Water Purifiers"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -284,10 +279,10 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">RO Water Purifiers</h3>
-                <p className="text-slate-600 leading-relaxed mb-4">Advanced reverse osmosis systems for pure, safe drinking water with essential minerals</p>
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">Commercial Water Purifiers</h3>
+                <p className="text-slate-600 leading-relaxed mb-4">High-capacity water purification systems for offices, schools, and industrial applications</p>
                 <Link href="/products">
-                  <span className="text-sky-600 font-medium hover:text-sky-700 transition-colors">Explore RO Systems →</span>
+                  <span className="text-sky-600 font-medium hover:text-sky-700 transition-colors">Explore Commercial Systems →</span>
                 </Link>
               </div>
             </div>
