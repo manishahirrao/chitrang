@@ -119,7 +119,7 @@ export default function ClientsSection({ onOpenQuoteModal }: { onOpenQuoteModal:
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span className="text-cyan-700 font-medium">
-              Serving 50+ clients across Bhopal
+              Serving 2000+ clients across Bhopal
             </span>
           </div>
         </div>
