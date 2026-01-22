@@ -187,7 +187,7 @@ export default function ServicesPage() {
                 </div>
                 <div className="relative h-80 md:h-96 rounded-xl overflow-hidden">
                   <img 
-                    src="/images/AMC & Preventive Maintenance.jpg" 
+                    src="/images/AMC.jpg" 
                     alt="AMC and Maintenance Service" 
                     className="w-full h-full object-cover"
                   />
