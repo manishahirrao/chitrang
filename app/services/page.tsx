@@ -128,7 +128,7 @@ export default function ServicesPage() {
                 </div>
                 <div className="relative h-80 md:h-96 rounded-xl overflow-hidden">
                   <img 
-                    src="/images/Installation & Commissioning.jpg" 
+                    src="/images/Installation & Commissioning.jpeg" 
                     alt="Professional Installation Service" 
                     className="w-full h-full object-cover"
                   />
@@ -240,7 +240,7 @@ export default function ServicesPage() {
                 </div>
                 <div className="relative h-80 md:h-96 rounded-xl overflow-hidden">
                   <img 
-                    src="/images/Filter & Membrane Replacement.jpeg" 
+                    src="/images/Filter & Membrane Replacement1.jpeg" 
                     alt="Filter and Membrane Replacement" 
                     className="w-full h-full object-cover"
                   />
@@ -299,7 +299,7 @@ export default function ServicesPage() {
                 </div>
                 <div className="relative h-80 md:h-96 rounded-xl overflow-hidden">
                   <img 
-                    src="/images/Repairs & Troubleshooting.jpeg" 
+                    src="/images/Filter & Membrane Replacement.jpg" 
                     alt="Repair and Troubleshooting Service" 
                     className="w-full h-full object-cover"
                   />

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { HiPhone, HiMail, HiLocationMarker } from 'react-icons/hi';
-import { FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaYoutube, FaInstagram } from 'react-icons/fa';
 import { BUSINESS_INFO, NAV_LINKS } from '@/lib/constants';
 
 export default function Footer() {
@@ -140,7 +140,16 @@ export default function Footer() {
             <h4 className="text-lg font-semibold text-white mb-4">Follow Us</h4>
             <div className="flex space-x-4">
               <a
-                href="https://www.facebook.com/sharer.php?u=https://www.chitranshagency.in/"
+                href="https://www.youtube.com/@chitranshagency"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-red-600 text-white p-3 rounded-lg hover:bg-red-700 hover:shadow-lg hover:shadow-red-500/25 transform hover:scale-105 transition-all duration-300"
+                aria-label="YouTube"
+              >
+                <FaYoutube className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.facebook.com/share/p/14XPJzMcVo6/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300"
@@ -149,22 +158,13 @@ export default function Footer() {
                 <FaFacebook className="w-5 h-5" />
               </a>
               <a
-                href="https://www.linkedin.com/cws/share?url=https://www.chitranshagency.in/"
+                href="https://www.instagram.com/hariombhatnagar?utm_source=qr&igsh=d2pmNTFvMm42MHM0"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-blue-700 text-white p-3 rounded-lg hover:bg-blue-800 hover:shadow-lg hover:shadow-blue-600/25 transform hover:scale-105 transition-all duration-300"
-                aria-label="LinkedIn"
+                className="bg-gradient-to-br from-purple-600 via-pink-600 to-orange-600 text-white p-3 rounded-lg hover:from-purple-700 hover:via-pink-700 hover:to-orange-700 hover:shadow-lg hover:shadow-pink-500/25 transform hover:scale-105 transition-all duration-300"
+                aria-label="Instagram"
               >
-                <FaLinkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="https://x.com/share?url=https://www.chitranshagency.in/&text=Chitransh%20Agency"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-sky-500 text-white p-3 rounded-lg hover:bg-sky-600 hover:shadow-lg hover:shadow-sky-500/25 transform hover:scale-105 transition-all duration-300"
-                aria-label="Twitter"
-              >
-                <FaTwitter className="w-5 h-5" />
+                <FaInstagram className="w-5 h-5" />
               </a>
             </div>
           </div>
