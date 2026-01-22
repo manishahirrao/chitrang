@@ -38,6 +38,11 @@ const clients = [
     name: 'SIS Tech',
     category: 'Technology',
     description: 'Technology solutions provider',
+  },
+  {
+    name: 'Sage University',
+    category: 'Education',
+    description: 'Premier university for higher education in Bhopal',
   }
 ];
 

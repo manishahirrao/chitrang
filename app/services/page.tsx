@@ -128,7 +128,7 @@ export default function ServicesPage() {
                 </div>
                 <div className="relative h-80 md:h-96 rounded-xl overflow-hidden">
                   <img 
-                    src="/images/Installation & Commissioning.webp" 
+                    src="/images/Installation & Commissioning.jpg" 
                     alt="Professional Installation Service" 
                     className="w-full h-full object-cover"
                   />

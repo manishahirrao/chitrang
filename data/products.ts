@@ -3,16 +3,6 @@ import { Product } from '@/types';
 export const products: Product[] = [
   // RO Water Purifiers (Kent, LG, Aqua Safe, Nasaka)
   {
-    id: 'ro-1',
-    title: 'Kent Ace RO Water Purifier',
-    description: 'Advanced 7-stage purification system with mineral RO technology. Perfect for home use with essential minerals.',
-    image: '/images/products/kent-ace-ro-water-purifier.webp',
-    category: 'ro-purifier',
-    features: ['7-Stage Purification', 'Mineral RO Technology', '8L Storage Tank', '1-Year Warranty'],
-    featured: true,
-    order: 1,
-  },
-  {
     id: 'ro-2',
     title: 'Kent Pearl RO Water Purifier',
     description: 'Elegant wall-mounted RO purifier with double purification and UV technology.',
@@ -57,15 +47,6 @@ export const products: Product[] = [
     category: 'ro-purifier',
     features: ['Innovative Design', 'Advanced Filtration', 'High Recovery', 'Energy Saving'],
     order: 6,
-  },
-  {
-    id: 'ro-11',
-    title: 'Nova RO Water Purifier',
-    description: 'Powerful Nova RO water purifier for high-performance water purification.',
-    image: '/images/products/nova-ro-water-purifier.webp',
-    category: 'ro-purifier',
-    features: ['High Performance', 'Powerful Motor', 'Large Capacity', 'Durable Construction'],
-    order: 11,
   },
   {
     id: 'ro-12',
@@ -120,15 +101,6 @@ export const products: Product[] = [
     category: 'ro-purifier',
     features: ['Multiple Options', 'Various Capacities', 'Different Designs', 'Wide Range'],
     order: 17,
-  },
-  {
-    id: 'ro-18',
-    title: 'LG RO Water Purifiers',
-    description: 'Premium LG RO water purifiers with advanced filtration technology and smart features.',
-    image: '/images/products/lg-ro-water-purifiers.webp',
-    category: 'ro-purifier',
-    features: ['LG Brand', 'Advanced Filtration', 'Smart Features', 'Energy Efficient'],
-    order: 18,
   },
   {
     id: 'ro-19',
