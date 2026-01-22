@@ -418,9 +418,9 @@ export const products: Product[] = [
     title: 'Aqua Safe Commercial Water Purifier',
     description: 'Professional Aqua Safe water purifier designed for commercial applications.',
     image: '/images/products/aqua-safe-commercial-water-purifier.webp',
-    category: 'commercial-purifier',
+    category: 'ro-purifier',
     features: ['Commercial Design', 'High Capacity', 'Advanced Filtration', 'Durable Build'],
-    order: 25,
+    order: 27,
   },
   {
     id: 'wc-8',
